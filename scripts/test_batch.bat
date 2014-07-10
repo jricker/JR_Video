@@ -1,0 +1,2 @@
+::Master BAT
+"\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\programs\\FFMPEG\\ffmpeg" -i "C:\Users\jricker\Desktop\TEST_MEDIA\TEST.mov" -vcodec libx264 -vprofile high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -vf scale=-1:480 -threads 0 -acodec libfdk_aac -b:a 128k "C:\Users\jricker\Desktop\TEST_MEDIA\TEST.mp4"

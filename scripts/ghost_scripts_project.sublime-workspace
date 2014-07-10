@@ -1,0 +1,680 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"inpt",
+				"input_data	(local, instance)"
+			],
+			[
+				"outpu",
+				"output_data"
+			],
+			[
+				"proces",
+				"processed	(local, instance)"
+			],
+			[
+				"inpu",
+				"input_data	(local, instance)"
+			],
+			[
+				"out",
+				"output_data	(local, instance)"
+			],
+			[
+				"resi",
+				"resizeWxH	(local, instance)"
+			],
+			[
+				"sys",
+				"system"
+			],
+			[
+				"action",
+				"action"
+			],
+			[
+				"temp",
+				"temp_height	(local, instance)"
+			],
+			[
+				"meta",
+				"metadata	(local, instance)"
+			],
+			[
+				"d",
+				"directory	(global, instance)"
+			],
+			[
+				"mo",
+				"mov2H264(input_data)	(attribute, function)"
+			],
+			[
+				"oup",
+				"output_mov	(local, instance)"
+			],
+			[
+				"OUTPUT",
+				"output_name"
+			],
+			[
+				"output",
+				"output_data	(local, instance)"
+			],
+			[
+				"TIFF",
+				"TIFF_folder	(local, instance)"
+			],
+			[
+				"Ti",
+				"TIFF_folder	(local, instance)"
+			],
+			[
+				"proce",
+				"processInput(input_data)	(attribute, function)"
+			],
+			[
+				"is",
+				"isalpha"
+			],
+			[
+				"final",
+				"QT_final_name"
+			],
+			[
+				"paren",
+				"parent_name	(local, instance)"
+			],
+			[
+				"input",
+				"input_data"
+			],
+			[
+				"file",
+				"filename	(local, instance)"
+			],
+			[
+				"p",
+				"p	(global, instance)"
+			],
+			[
+				"oupu",
+				"output_avi	(local, instance)"
+			],
+			[
+				"JPG",
+				"JPG_output	(local, instance)"
+			],
+			[
+				"process",
+				"processInput(input_data)	(attribute, function)"
+			],
+			[
+				"iterat",
+				"iteration_length	(local, instance)"
+			],
+			[
+				"iterator",
+				"iteratorValue	(local, instance)"
+			],
+			[
+				"getIt",
+				"getIteratorLocation(i)	(attribute, function)"
+			],
+			[
+				"getIter",
+				"getIteratorValue(i)	(attribute, function)"
+			],
+			[
+				"getIterat",
+				"getIteratorLocation(i)	(attribute, function)"
+			],
+			[
+				"outp",
+				"output_name	(local, instance)"
+			],
+			[
+				"camera",
+				"camera"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"all",
+				"allSeperated	(global, instance)"
+			],
+			[
+				"Gen",
+				"GENERIC"
+			],
+			[
+				"PS3",
+				"PS3"
+			],
+			[
+				"sg",
+				"sg_status_list"
+			],
+			[
+				"summar",
+				"summarize"
+			],
+			[
+				"summ",
+				"summaries"
+			],
+			[
+				"mov",
+				"movList"
+			],
+			[
+				"dir",
+				"dirpath"
+			],
+			[
+				"new",
+				"new_return"
+			],
+			[
+				"attr",
+				"attributeList"
+			],
+			[
+				"history",
+				"historyList"
+			],
+			[
+				"atr",
+				"attributeList"
+			],
+			[
+				"histo",
+				"historyList"
+			],
+			[
+				"y",
+				"Y"
+			],
+			[
+				"locator",
+				"locatorList"
+			],
+			[
+				"get",
+				"getType"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"sele",
+				"select"
+			],
+			[
+				"pri",
+				"primitiveActions"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Discover Packages"
+			],
+			[
+				"snippet	",
+				"Snippet: struct"
+			],
+			[
+				"Snippet:",
+				"Snippet: #include <…>"
+			],
+			[
+				"snippet:",
+				"Snippet: struct"
+			],
+			[
+				"snippet if",
+				"Snippet: If Condition"
+			],
+			[
+				"snippet",
+				"Snippet: Function"
+			],
+			[
+				"PACK",
+				"Package Control: Install Package"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 375.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_convert.bat",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_rename_class.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_system_class.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/test_page.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_batch_converter.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_convert_class.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/settings/vDub_compression/vDub_avi_compression_custom.vcf",
+		"/C/Users/jricker/Desktop/testing.vdscript",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_deploy.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_convert_backup.bat",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_convert_class_backup.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_project_class.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/settings/vDub_compression/vDub_goPro_compression.vcf",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/settings/vDub_compression/vDub_avi_compression_23976.vcf",
+		"/C/Users/jricker/Desktop/testFolder/EDITS/testing.prproj",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/settings/vDub_compression/vDub_avi_compression_2398.vcf",
+		"/C/Users/jricker/Desktop/testFolder/test.RMD",
+		"/C/Users/jricker/Desktop/test_S000.batch",
+		"/C/Users/jricker/Desktop/testFolder/Untitled.batch",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_tool_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_hk_cmds.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_dir_builder.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/programs/FFMPEG/test_batch.bat",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/test_batch.bat",
+		"/D/GATEBIL/03_EDITS/02_PREMIER_PROJECT/TEST_EDIT.prproj",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_deploy.bat",
+		"/C/Users/jricker/Desktop/testa.reg",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/settings/registry/custom_reg.reg",
+		"/C/Users/jricker/Desktop/aaaaa.reg",
+		"/C/Users/jricker/AppData/Roaming/Copy/copy james.ricker@gmail.com.db",
+		"/C/Users/jricker/AppData/Roaming/Copy/overlay/CopyShExt.dllb27a2638-6719-4cf1-8499-c3e34198f636",
+		"/C/Users/jricker/AppData/Roaming/Copy/overlay/CopyShExt.dll",
+		"/C/Users/jricker/Desktop/TEST_PROJECT.prproj",
+		"/G/01 ANNIVERSARY/8 EDITS/NFS_20year_FINAL_new_audio.prproj",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_cache_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_attribute_class.py",
+		"/D/projects/havana/dl/Havana001/havanadata/Raw/Weapons/Handheld/A91/Rig/skeletonOffset.mel",
+		"/D/projects/havana/dl/Havana001/havanadata/Raw/Weapons/Handheld/A91/Rig/controls.mel",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_hud_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_camera_shuffle.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_custom_window.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/userSetup.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_selection_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_material_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_hk_map.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_Maya_Sublime.sublime-project",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_skratch.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/WIP_UI_sceneOpen.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/WIP_UI_batchProcess.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_camera_shake.py",
+		"/C/Users/jricker/Desktop/test.py",
+		"/C/Users/jricker/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/jricker/AppData/Roaming/Sublime Text 2/Packages/User/C++_test.sublime-build",
+		"/C/Users/jricker/Desktop/test.cpp",
+		"/C/Users/jricker/AppData/Roaming/Sublime Text 2/Packages/User/Python/import.sublime-snippet",
+		"/C/Users/jricker/AppData/Roaming/Sublime Text 2/Packages/User/C++_Boost.sublime-build",
+		"/C/Users/jricker/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/jricker/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/jricker/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_playblast_tool.py",
+		"/D/projects/havana/dl/Havana001/arttools_EARS/maya/mel/animation/team_scripts.mel",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/settings/vDub_compression/vDub_avi_compression.vcf",
+		"/C/Users/jricker/Documents/GitHub/python-api/shotgun_api3/JR_test_04.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/path_cache.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/folder/folder_types.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/folder/folder_io.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/folder/operations.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/folder/configuration.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/platform/application.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/api.py",
+		"/C/mnt/software/shotgun/studio/install/apps/app_store/tk-shotgun-folders/v0.1.5/app.py",
+		"/C/mnt/software/shotgun/studio/install/engines/app_store/tk-shotgun/v0.3.6/engine.py",
+		"/C/Users/jricker/Downloads/activate_shotgun_pipeline_toolkit.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/folder/__init__.py",
+		"/C/mnt/software/shotgun/studio/install/core/scripts/tank_cmd.py",
+		"/C/mnt/software/shotgun/studio/install/core/setup/tank_api_proxy/tank/__init__.py",
+		"/C/mnt/software/shotgun/studio/install/core/python/tank/__init__.py",
+		"/C/mnt/software/shotgun/studio/install/apps/app_store/tk-shotgun-folders/v0.1.5/app_backup.py",
+		"/C/mnt/software/shotgun/studio/install/apps/app_store/tk-shotgun-launchpublish/v0.1.14/app.py",
+		"/C/mnt/software/shotgun/studio/install/frameworks/app_store/tk-framework-widget/v0.1.23/framework.py",
+		"/C/mnt/software/shotgun/studio/install/engines/app_store/tk-shotgun/v0.3.6/python/tk_shotgun/task.py",
+		"/C/mnt/software/shotgun/studio/install/engines/app_store/tk-shell/v0.3.5/engine.py",
+		"/C/Users/jricker/Documents/GitHub/tk-shotgun/engine.py",
+		"/C/Users/jricker/Documents/GitHub/tk-shotgun/python/tk_shotgun/__init__.py",
+		"/C/Users/jricker/Documents/GitHub/tk-shotgun/python/tk_shotgun/task.py",
+		"/C/mnt/software/shotgun/fifa_14/install/core/python/sgtk/__init__.py",
+		"/C/mnt/software/shotgun/fifa_14/config/after_project_create.py",
+		"/C/Users/jricker/Dropbox/JR_test_03.py",
+		"/C/Users/jricker/Documents/GitHub/python-api/shotgun_api3/JR_test.py",
+		"/C/Users/jricker/Documents/GitHub/python-api/shotgun_api3/shotgun.py",
+		"/C/Users/jricker/Documents/GitHub/python-api/shotgun_api3/sg_25.py",
+		"/C/Users/jricker/Documents/GitHub/JR_test.py",
+		"/C/Users/jricker/Documents/GitHub/python-api/tests/test_api.py",
+		"/C/Users/jricker/Documents/GitHub/python-api/setup.py",
+		"/C/Users/jricker/Documents/GitHub/python-api/JR_test.py",
+		"/C/Users/jricker/Documents/GitHub/python-api/shotgun_api3.py",
+		"/C/Users/jricker/Desktop/nfsr_prefix.py",
+		"/C/Users/jricker/Desktop/iteration.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/JR_rename_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/JR_convert_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/JR_project_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/JR_system_class.py",
+		"/C/Program Files/Adobe/Adobe After Effects CS6/Support Files/Scripts/ScriptUI Panels/True Comp Duplicator.jsx",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/JR_dir_builder.py",
+		"/C/Users/jricker/Copy/ASSETS/NUKE/gizmos/BokehBlur.gizmo",
+		"/C/Users/jricker/Desktop/Aberration_jb (1).gizmo",
+		"/C/Users/jricker/Desktop/superSlate/SuperSlateWin.gizmo",
+		"/C/Users/jricker/Dropbox/python/2013_04_26/tool_toDOs.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/JR_convert.bat",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/JR_batch_converter.py",
+		"/C/Users/jricker/Downloads/camera_scene (1).py",
+		"/C/Users/jricker/Downloads/camera_scene.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_ui_main.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/settings/registry/default_reg.reg",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/batch_converter.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Project/screenshot_finder.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_dragger_class.py",
+		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/batch_converter.py",
+		"/C/Users/jricker/Desktop/screenshot_test.py",
+		"/D/projects/nfs15/NFS15Raw/DL/Dev/Data/Raw/Cinematics/02 GPMM/02_ANIMATION/GPMM_sc01/GPMM_sc01_sh250/FINAL_EXPORTS/GPMM_sc01_sh250_Aventador_leadCop.atom",
+		"/C/Users/jricker/Desktop/GPMM/02_ANIMATION/GPMM_sc01/GPMM_sc01_sh265/FINAL_EXPORTS/GPMM_sc01_sh010_CAR.atom",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_refresh_modules.py",
+		"/C/Users/jricker/Documents/maya/2013-x64/prefs/userNamedCommands.mel",
+		"/C/Users/jricker/Documents/maya/2013-x64/scripts/userScripts.mel",
+		"/C/Users/jricker/Documents/maya/2013-x64/prefs/userRGBColors2.mel",
+		"/C/Users/jricker/Documents/maya/2013-x64/prefs/userPrefs.mel",
+		"/C/Users/jricker/Documents/maya/2013-x64/prefs/userHotkeys.mel",
+		"/C/Users/jricker/Documents/maya/2013-x64/Maya.env"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"batch_cmd",
+			"= '\"'+",
+			"#",
+			"processed",
+			"[2:]",
+			"_data",
+			"processed",
+			"PROCESSED",
+			"= str(",
+			"str(int",
+			"'x'",
+			"metadata",
+			"3)",
+			"metadata",
+			"metadata[",
+			"metadata",
+			"\\",
+			"temp_width",
+			"temp_height",
+			"i",
+			":err",
+			"9",
+			"hxw",
+			"meta",
+			"metadata",
+			"processMetadata",
+			"test2",
+			"metadata",
+			"readlin",
+			"directory",
+			"/",
+			"\\\\",
+			"\\",
+			"PRORES",
+			"R3D",
+			"_H264.mp4",
+			"H264",
+			"JPG_folder",
+			"parent_name",
+			"filename",
+			"p",
+			"localation",
+			"final_name_lcoation",
+			"\\\\",
+			"/",
+			"+'.jpg'",
+			"extension",
+			"parent_name",
+			"JPG_output[:-4]",
+			"JPG_output",
+			"extension",
+			"iteration_length",
+			"iteration",
+			"input_data.endswith(",
+			"input_data",
+			"input_data.endswith",
+			"parent_folder",
+			"parent_name",
+			"self.selection",
+			"\\\\",
+			"/",
+			"\\",
+			"/",
+			"moveMovies",
+			"createMOV",
+			"\\",
+			"PRORES",
+			"output_file.mp4",
+			"C:\\Users\\jricker",
+			"C:\\\\Users\\jricker",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"mov",
+			"MOV",
+			"RENDER",
+			"render",
+			"RENDER",
+			"Media ObjectUID",
+			"blackmagic",
+			"lastknowngoodprojectpath",
+			"Desktop",
+			"JAMES",
+			"TEST",
+			"ctrl_m",
+			"assignRandomMaterial",
+			"material",
+			"ctrl_m",
+			".modelPanel",
+			"Cache.modelPanel",
+			"\\",
+			"###########      C",
+			"objectChild",
+			"self.centerPivot",
+			"print ' ",
+			"self",
+			"R",
+			"<=",
+			"locator",
+			"snipp",
+			"~",
+			"[\"alt+s\"]",
+			"poly",
+			"self",
+			"+G",
+			"_selection",
+			"self",
+			"+g",
+			"self"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 360.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"tool",
+				"JR_tool_class.py"
+			],
+			[
+				"cmds",
+				"JR_hk_cmds.py"
+			],
+			[
+				"too",
+				"JR_tool_class.py"
+			],
+			[
+				"user",
+				"userSetup.py"
+			],
+			[
+				"stool",
+				"JR_playblast_tool.py"
+			],
+			[
+				"shak",
+				"JR_camera_shake.py"
+			],
+			[
+				"attr",
+				"JR_attribute_class.py"
+			],
+			[
+				"tools",
+				"JR_tool_class.py"
+			],
+			[
+				"hkmap",
+				"JR_hk_map.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 257.0,
+	"status_bar_visible": true
+}

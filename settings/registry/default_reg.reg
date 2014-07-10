@@ -1,0 +1,80 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.edl]
+@="EDLfile"
+
+[HKEY_CLASSES_ROOT\EDLfile]
+
+[HKEY_CLASSES_ROOT\EDLfile\shell]
+
+[HKEY_CLASSES_ROOT\EDLfile\shell\create mov]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\EDLfile\shell\create mov\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "EDL2MOV"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Cinematic UI]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Cinematic UI\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_ui_main.py"
+
+[HKEY_CLASSES_ROOT\jpegfile\shell\rename file]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\jpegfile\shell\rename file\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "RENAME"
+
+[HKEY_CLASSES_ROOT\jpegfile\shell\create mov]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\jpegfile\shell\create mov\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "IMG2MOV"
+
+[HKEY_CLASSES_ROOT\Photoshop.TGAFile.60\shell\rename file]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\Photoshop.TGAFile.60\shell\rename file\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "RENAME"
+
+[HKEY_CLASSES_ROOT\Photoshop.TGAFile.60\shell\create mov]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\Photoshop.TGAFile.60\shell\create mov\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "IMG2MOV"
+
+[HKEY_CLASSES_ROOT\Photoshop.TIFFFile.60\shell\rename file]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\Photoshop.TIFFFile.60\shell\rename file\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "RENAME"
+
+[HKEY_CLASSES_ROOT\Photoshop.TIFFFile.60\shell\create mov]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\Photoshop.TIFFFile.60\shell\create mov\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "IMG2MOV"
+
+[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\create mov]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\create mov\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "IMG2MOV"
+
+[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\rename file]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\rename file\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "RENAME"
+
+[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\convert to img]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\convert to img\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "EXR2IMG"
+
+[HKEY_CLASSES_ROOT\VLC.avi\shell\convert to prores]
+"Icon"="C:\\Users\\USERNAME\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+
+[HKEY_CLASSES_ROOT\VLC.avi\shell\convert to prores\command]
+@=hex(2):%CPYW% "C:\Users\USERNAME\Copy\GHOST\CINEMATIC_SCRIPTS\scripts\JR_convert_class.py" "%1" "PRORES"
