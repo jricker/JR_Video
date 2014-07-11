@@ -1,4 +1,4 @@
-from JR_system_class import *
+from JR_system_class import System
 class Project(System):
 	def __init__(self):
 		System.__init__(self)

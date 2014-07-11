@@ -1,6 +1,6 @@
-from JR_project_class import *
-from JR_system_class import *
-import binascii, re
+from JR_project_class import Project
+from JR_system_class import System
+#import binascii, re
 import codecs
 import shutil
 import sys
@@ -133,7 +133,7 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 			os.system(action)
 		else:
 			batch_cmd = "IMG2MOV"
-			setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + compression + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' + self.vlc)
+			setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + compression_02 + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' + self.vlc)
 			os.system(setup)
 		os.rename(parent_name+'.mov', parent_folder+QT_final_name) # rename the file after all is set and done. 
 		##############################################################################################################################################

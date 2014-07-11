@@ -1,4 +1,3 @@
-import os
 import re
 class Rename():
 	def __init__(self):#, selection, name):

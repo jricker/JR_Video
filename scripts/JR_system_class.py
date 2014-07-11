@@ -1,11 +1,11 @@
 import os
-from JR_rename_class import *
+from JR_rename_class import Rename
 class System(Rename):
     def __init__(self):
         Rename.__init__(self)
         ## MASTER PATHS 
         self.userName = os.path.expanduser("~")
-        self.systemLocation = self.userName + '\\Desktop\\TEST\\CINEMATIC_SCRIPTS\\'
+        self.systemLocation = self.userName + '\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\'
         ## PROGRAMS
         self.vlc = '"C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe"'
         self.djv = '"C:\\Program Files (x86)\\djv 0.8.3\\bin\\djv_convert"'
@@ -17,7 +17,7 @@ class System(Rename):
         ## FOLDER LOCATIONS
         self.libraries = self.systemLocation + "libraries"
         self.images = self.systemLocation + "images"
-        self.files = self.systemLocation + "files"
+        self.files = self.systemLocation + "libraries\\files"
         self.scripts = self.userName +"\\Documents\\GitHub\\JR_Video\\scripts"
         self.settings = self.userName +"\\Documents\\GitHub\\JR_Video\\settings"
         self.sequences = self.systemLocation + "test\\sequences"

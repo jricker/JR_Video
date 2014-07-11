@@ -1,7 +1,7 @@
 import sys
 import os
 from functools import partial
-from JR_system_class import *
+from JR_system_class import System
 from Tkinter import *
 from PIL import Image, ImageTk
 from tkFileDialog import askopenfilename, askdirectory
@@ -25,10 +25,10 @@ class Directory(System):
 		bgColour = '#2f2f2f'
 		self.btnColour1 = '#136ec7'
 		self.btnColour2 = '#098400'
-		input_bgColour = '#cecece'
-		input_fgColour = 'black'
+		#input_bgColour = '#cecece'
+		#input_fgColour = 'black'
 		# TEXT
-		btnFont = 'Arial'
+		#btnFont = 'Arial'
 		# BUTTONS
 		self.XMLBtn = Button(text = 'XML > DIR', bg = self.btnColour1, fg = 'white', width = 200, height = 03, command = partial(self.assignValues, 'XML') )
 		self.IMGBtn = Button(text = 'MOV', bg = self.btnColour1, fg = 'white', width = 200, height = 03, command = partial(self.assignValues, 'IMG') )

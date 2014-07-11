@@ -23,7 +23,7 @@ userName = os.path.expanduser("~")
 #mainDirectory = '\\eucr-fs1.eu.ad.ea.com\\Studio\\HawaiiMarketing\\CINEMATICS\\MERCURY NFS15'
 mainDirectory = userName + '\\Desktop'
 masterXML = 'project.xgml'
-projectName = 'GATEBIL'
+projectName = 'JAPAN'
 produceLOD = 0
 produceSC = 1
 sceneAmount = 1
@@ -98,7 +98,8 @@ def getFileExtList (dirPath,uniq=True,sorted=True):
     if sorted:
         extList.sort()
     return extList
-defaultFileLocation = userName + JRsystem.systemLocation + "libraries/files"
+###
+defaultFileLocation = JRsystem.files
 fileLibrary = getFileExtList(defaultFileLocation)
 ###
 total = []
