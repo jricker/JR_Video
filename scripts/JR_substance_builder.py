@@ -22,11 +22,11 @@ directoryList = []
 userName = os.path.expanduser("~")
 #mainDirectory = '\\eucr-fs1.eu.ad.ea.com\\Studio\\HawaiiMarketing\\CINEMATICS\\MERCURY NFS15'
 mainDirectory = userName + '\\Desktop'
-masterXML = 'asset_models.xgml'
-projectName = 'firearm_acr'
+masterXML = 'substance.xgml'
+projectName = 'JR_rubber'
 produceLOD = 1
 produceSC = 0
-sceneAmount = 4
+sceneAmount = 1
 shotAmount = 1
 ############################
 tree = ET.parse(masterXML)
