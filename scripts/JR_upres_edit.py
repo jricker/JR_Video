@@ -1,13 +1,15 @@
 import os
 import shutil
 import JR_convert_class
-#import re
+########################################################################################
 convert = JR_convert_class.Convert()
-project = open("D:\\GATEBIL\\03_EDITS\\02_PREMIER_PROJECT\\GATEBIL_EDIT_HIGHRES.prproj", 'r')
+project_file = "D:\\GATEBIL\\03_EDITS\\02_PREMIER_PROJECT\\GATEBIL_EDIT_HIGHRES.prproj"
+project = open(project_file, 'r')
 original_folder = "H:\\Gatetbil 2014"
 HQ_folder = "D:\\GATEBIL\\02_FOOTAGE\\03_MOV\\01_HQ"
 new_relative_path = "..\\..\\02_FOOTAGE\\03_MOV\\00_HQ\\"
 tempList = []
+########################################################################################
 for line in project:
 	if "H264" in line:
 		MP4 = line.rfind(".mp4")
@@ -21,15 +23,16 @@ for line in project:
 		tempList.append(bb)
 	else:
 		pass
-project.close()
+project.close() # close the project once you've read through all of the lines so it can be used later
 tempList = set(tempList)
-#print tempList
 fileList = []
+########################################################################################
 for i in tempList:
 	if i== '':
 		pass
 	else:
 		fileList.append(i[:-9])
+########################################################################################
 original_list = []
 HQ_list = []
 for dirpath,dirnames,filenames in os.walk(original_folder):
@@ -39,40 +42,32 @@ for dirpath,dirnames,filenames in os.walk(original_folder):
 			if x[:dot] in fileList:
 				original_list.append(dirpath+'\\'+x)
 				HQ_list.append(HQ_folder +'\\'+x)
-#print original_list
-#print HQ_list
+########################################################################################
 ## HERE IS WHERE YOU COPY THE FILES FROM RAID TO LOCAL
+########################################################################################
 for i in range(len(original_list)):
 	if os.path.exists(HQ_list[i]):
 		pass
 	else:
 		if original_list[i].endswith('.MXF'):
-			if os.path.exists(HQ_list[i][:-4]+'.mov'):
-				#print 'mov exists'
+			if os.path.exists(HQ_list[i][:-4]+'.mov'): # have to do this because Adobe can't use MXF file types
 				pass
 			else:
-				#print 'converting'
 				convert.mov2prores(original_list[i], HQ_list[i][:-4]+'.mov')
 		else:
-			#print 'would be copying over'
 			shutil.copy(original_list[i], HQ_folder)
-#for i in original_list:
-#	shutil.copy(i, HQ_folder)
-#project = open("D:/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES_02.prproj", 'r')
-#highResProject = open("D:/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES.prproj", 'r')
-input_file = open("D:/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES.prproj", 'r',)
-output_file = open("D:/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES_01.prproj", 'w')
-#with open("D:/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES_02.prproj", 'r',) as input_file, open("D:/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES_01.prproj", 'w') as output_file:
+input_file = open(project_file, 'r',)
+output_file = open(project_file[:-7]+"01.prproj", 'w')
+########################################################################################
+# iterate through all of the lines once more to replace and write out anything that has H264 associated with it.
+########################################################################################
 for lines in input_file:
 	if "H264" in lines:
-		#print lines
 		aaa = lines
 		if "<Title>" in lines or "<Name>" in lines:
-			#backspace = lines.rfind("\\")
 			MP4 = lines.rfind("_H264.mp4")
 			beginning = lines.find(">")
 			middle = lines[beginning+1:MP4]
-			#print middle
 			end = lines.rfind("</")
 			for i in HQ_list:
 				if i.endswith(".MXF"):
@@ -114,18 +109,5 @@ for lines in input_file:
 					#print lines[:beginning+1] + new_relative_path +i[i.rfind('/')+1:] + lines[end:]
 					aaa = lines[:beginning+1] + new_relative_path +i[i.rfind('/')+1:] + lines[end:]
 		output_file.write(aaa)
-		#print lines
-		#MP4 = lines.rfind(".mp4")
-		#backspace = lines.rfind("\\")
-		#a = lines[backspace+1:MP4+4]
-		#print a
-		#if '>' in a:
-		#	ff = lines.rfind(">")
-		#	bb = a[ff:]
-		#else:
-		#	bb = a
-		#print bb
-		#print line
-	#print line
 	else:
 		output_file.write(lines)
