@@ -82,7 +82,7 @@ class Directory(System):
 		ws.write(0, 12, 'WORLD WIDE (GENERAL)', st)
 		for i in range(13):
 			ws.col(i).width = 5000# + i
-		wb.save('C:/Users/jricker/Desktop/testCase.xls')
+		wb.save(self.userName+'/Desktop/testCase.xls')
 	def Run(self, variables):
 		self.tk.geometry('200x400+600+300')
 		self.tk.iconbitmap(default= self.images + "\UI\icon.ico")	 

@@ -44,4 +44,4 @@
 ::
 :::usage
 ::::echo Usage: %~nx0 [arg [arg [arg]]] etc.
-python C:\Users\jricker\Documents\GitHub\JR_Video\scripts\JR_ae_generate.py "%*"
+python C:\Users\%USERNAME%\Documents\GitHub\JR_Video\scripts\JR_ae_generate.py "%*"
