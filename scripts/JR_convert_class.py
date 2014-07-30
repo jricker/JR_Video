@@ -148,10 +148,11 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 			setup2 = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' + '"'+movFolder+'"') # This opens the MOV folder after creation, but have to control if batch converting multiple shots
 			os.system(setup2)
 			#os.system('"''start '+parent_folder+'\\01_MOV'+'"') # have to make a fix for this if it doesn't export to an MOV folder and just does it to the recent directory
-	def mov2prores(self, input_data):
+	def mov2prores(self, input_data = '', output_data = ''):
 		batch_cmd = 'PRORES'
-		output_data = input_data[:[i for i, letter in enumerate(input_data) if letter == '.'][-1] ]+'_prores.mov'
-		action = (self.scripts + "\\JR_convert.bat "+ batch_cmd+ ' ' +self.ffmpeg+ ' ' +input_data+ ' ' + output_data + ' ' + str(self.prores['ProRes422_Normal']) )
+		if output_data == '':
+			output_data = input_data[:[i for i, letter in enumerate(input_data) if letter == '.'][-1] ]+'_prores.mov'
+		action = (self.scripts + "\\JR_convert.bat "+ batch_cmd+ ' ' +self.ffmpeg+ ' ' +'"'+input_data+'"'+ ' ' +output_data + ' ' + str(self.prores['ProRes422_Normal']) )
 		os.system(action)
 	def mov2H264(self, input_data):
 		batch_cmd = 'H264'

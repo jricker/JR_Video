@@ -15,7 +15,7 @@ if %~1 == OPENFOLDER goto OPENFOLDER
 goto END
 ::
 :PRORES
-"%~2" -i %3 -y -vcodec prores -profile:v %~5 -s hd1080 -bits_per_mb 20000 "%~4"
+"%~2" -i "%~3" -y -vcodec prores -profile:v %~5 -bits_per_mb 20000 "%~4"
 goto END
 ::
 :H264
