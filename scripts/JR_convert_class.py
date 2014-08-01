@@ -152,7 +152,7 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 		batch_cmd = 'PRORES'
 		if output_data == '':
 			output_data = input_data[:[i for i, letter in enumerate(input_data) if letter == '.'][-1] ]+'_prores.mov'
-		action = (self.scripts + "\\JR_convert.bat "+ batch_cmd+ ' ' +self.ffmpeg+ ' ' +'"'+input_data+'"'+ ' ' +output_data + ' ' + str(self.prores['ProRes422_Normal']) )
+		action = (self.scripts + "\\JR_convert.bat "+ batch_cmd+ ' ' +self.ffmpeg+ ' ' +'"'+input_data+'"'+ ' ' +output_data + ' ' + str(self.prores['ProRes422_HQ']) )
 		os.system(action)
 	def mov2H264(self, input_data):
 		batch_cmd = 'H264'
