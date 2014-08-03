@@ -1,13 +1,17 @@
 import xlrd
 import os
+import sys
 ###################################################
 ###################################################
+variables = sys.argv[1]
+excelDocument = variables[0]
+listToProcess = variables[1:]
 userName = os.path.expanduser("~")
-workbook = xlrd.open_workbook('C:/Users/James/Desktop/testCase_01.xls')
+#workbook = xlrd.open_workbook('C:/Users/James/Desktop/testCase_01.xls')
+workbook = xlrd.open_workbook(excelDocument)
 worksheet = workbook.sheet_by_name('Text')
 textFile = 'C:/Users/James/Desktop/data.txt'
 finalList = []
-#############################################################
 def processRegions(region):
 	regionCellValue = 0
 	if region.upper() == 'UK':
@@ -65,14 +69,18 @@ def readExcel(region):
 						pass
 					else:
 						if curr_cell == regionalValue:
+							#print region
+							#print region+'_'+composition, original_cell_value , cell_value
 							regionData['ID'] = region
 							regionData['Comp'].append([region+'_'+composition,[original_cell_value],[cell_value]])
 							#regionData['Original'].append(original_cell_value)
 							#regionData['Text'].append(cell_value)
 							#print 'Comp ->', composition, '    ', 'Language ->', worksheet.cell_value(0, curr_cell), '    ', 'text ->', cell_value
+	final_list = []
 	for x in range(len(regionData['Comp'])):
-		finalList.append(regionData['Comp'][x])
-	writeOut()
+		print regionData['Comp'][x]
+		final_list.append(regionData['Comp'][x])
+	writeOut(final_list)
 		#print regionData['Comp'][x]
 		#output_file.write(str(regionData['Comp'][x])+'\n')
 		#output_file.write(x)
@@ -81,15 +89,14 @@ def readExcel(region):
 	#print regionData['Comp'][2]
 					#print '	', 'text ->', cell_value, 'Language ->', worksheet.cell_value(0, curr_cell), 'Comp ->', composition
 					#print '	', 'text ->', cell_value, 'Language ->', worksheet.cell_value(0, curr_cell), 'Comp ->', composition
-def writeOut():
-	for i in finalList:
+def writeOut(item):
+	for i in item:
 		output_file.write(str(i)+'\n')
-#readExcel('IT')
-#############################################################
-##                      BEGIN
-listToProcess = ['it', 'fr']
+	#output_file.close()
+#listToProcess = ['it', 'fr']
 for i in listToProcess:
 	readExcel(i)
+#readExcel('IT')
 ##################################
 ### DOUBLE CHECK THE ORIGINAL DATA FIRST TO SEE IF ANYTHING HAS CHANGED IN THE EXCEL DOCUMENT, IF IT HAS CHANGE IT IN THE AE PROJECT
 ##################################

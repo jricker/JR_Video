@@ -1,4 +1,5 @@
 import os
+import re
 from JR_rename_class import Rename
 class System(Rename):
     def __init__(self):
@@ -33,6 +34,12 @@ class System(Rename):
             high = [x for x in pp if x > ii]
             low = [x for x in pp if x < ii]
             return input_data[:high[0]], input_data[low[-1]+1:high[0]]
+    def regFind(self, itemToSearch, searchForThis):
+        d = itemToSearch
+        s = re.compile(r'/*'+searchForThis) # this finds the backslashes in the to be created directory
+        f = s.finditer(d)
+        g = [ x.span() for x in f ]
+        return g
     def rename(self, input_data):
         input_data = [input_data]
         self.selection = input_data
