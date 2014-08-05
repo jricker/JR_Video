@@ -81,11 +81,5 @@ class System(Rename):
             os.rename(old, new)
         return new_return[0] # this is to return any item after it is renamed, for use in other functions
         #print new_return[0], 'asdfsa'
-"""
 if __name__ == '__main__':
     K = System()
-    K.selection = 'C:\\Users\\jricker\\Desktop\\GC\\03_RENDER\\GC_sc01\\GC_sc01_sh010\\EXR\\4K\\test-001.exr'
-    #K.selection.append('C:\\Users\\jricker\\Desktop\\test\\test-0001.exr')
-    #K.selection.append('C:\\Users\\jricker\\Desktop\\GC\\03_RENDER\\GC_sc01\\GC_sc01_sh010\\EXR\\4K\\test-0001.exr')
-    K.rename(K.selection)
-"""

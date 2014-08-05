@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 import xlrd
 import os
 import sys
 from JR_system_class import System
+import codecs
 ###################################################
 ###################################################
 class ProcessExcelDoc(System):
@@ -39,10 +41,8 @@ class ProcessExcelDoc(System):
 		#################################################
 		#################################################
 		##
-		self.textFile = 'C:/Users/James/Desktop/data.txt'
-		self.output_file = open(self.textFile, 'w',)
 		self.userName = os.path.expanduser("~")
-		#workbook = xlrd.open_workbook('C:/Users/James/Desktop/testCase_01.xls')
+		#workbook = xlrd.open_workbook('C:/Users/jricker/Desktop/testCase_01.xls')
 		##
 		workbook = xlrd.open_workbook(excelDoc)
 		worksheet = workbook.sheet_by_name('Text')
@@ -78,37 +78,44 @@ class ProcessExcelDoc(System):
 							pass
 						else:
 							if curr_cell == regionalValue:
-								#print region
-								#print region+'_'+composition, original_cell_value , cell_value
+								#
+								again = cell_value.encode("utf-8")
 								regionData['ID'] = region
-								regionData['Comp'].append([region+'_'+composition,[original_cell_value],[cell_value]])
-								#regionData['Original'].append(original_cell_value)
-								#regionData['Text'].append(cell_value)
-								#print 'Comp ->', composition, '    ', 'Language ->', worksheet.cell_value(0, curr_cell), '    ', 'text ->', cell_value
+								regionData['Comp'].append([region+'_'+composition, original_cell_value, again ])
+								#print again
+								#######################################################################################################
 		for x in range(len(regionData['Comp'])):
-			#print regionData['Comp'][x]
+			a = regionData['Comp'][x]
+			for i in range(len(a)):
+				regionData['Comp'][x][i] = a[i].decode("utf-8")
 			self.final_list.append(regionData['Comp'][x])
 		self.writeOut(self.final_list)
-			#print regionData['Comp'][x]
-			#output_file.write(str(regionData['Comp'][x])+'\n')
-			#output_file.write(x)
-		#print regionData['Comp'][0]
-		#print regionData['Comp'][1]
-		#print regionData['Comp'][2]
-						#print '	', 'text ->', cell_value, 'Language ->', worksheet.cell_value(0, curr_cell), 'Comp ->', composition
-						#print '	', 'text ->', cell_value, 'Language ->', worksheet.cell_value(0, curr_cell), 'Comp ->', composition
 	def writeOut(self, item):
-		#print 'here'
+		self.textFile = 'C:/Users/jricker/Desktop/data.txt'
+		#self.output_file = open(self.textFile, 'w',)
+		self.output_file = codecs.open(self.textFile, 'w', encoding = "utf-8")
+		#with codecs.open('C:/Users/jricker/Desktop/data.txt', 'w', encoding='utf-8') as out:
 		for i in item:
 			#print i
-			self.output_file.write(str(i)+'\n')
-		#self.output_file.close()
+			#self.output_file.write('\n')
+			p = 0
+			for x in range(len(i)):
+				p +=1
+				if p == len(i):
+					self.output_file.write("'"+i[x]+"'"+u'\r\n')
+					#self.output_file.write(u'\r\n')
+				else:
+					self.output_file.write("'"+i[x]+"'"+',')
+			self.output_file.write('\n')
+			#out.write(u'ЛОКАЛИЗАЦИЯ')#str(i)[1:-1]+'\n')
+			#self.output_file.write(str(i)[1:-1]+'\n')
+		self.output_file.close()
 	#listToProcess = ['it', 'fr']
 if __name__ == '__main__':
 	Kk = ProcessExcelDoc()
 	theList = []
 	variable = sys.argv[1]
-	#variable = 'C:/Users/James/Desktop/testCase_01.xls,it,fr'
+	#variable = 'C:/Users/jricker/Desktop/localized_text.xls,fr'
 	regList = Kk.regFind(variable, ',')
 	regList.insert(0, (0,0)) # adding 0 to the beginning to we can flow through it properly. 
 	for i in range(len(regList)):
@@ -147,7 +154,7 @@ if __name__ == '__main__':
 	#for i in t:
 	#	a.append(i)
 	#for i in variables:
-	#variables = ['C:/Users/James/Desktop/testCase_01.xls', 'it', 'fr']
+	#variables = ['C:/Users/jricker/Desktop/testCase_01.xls', 'it', 'fr']
 	#variables = sys.argv[1]
 	print theList
 	excel = theList[0]
