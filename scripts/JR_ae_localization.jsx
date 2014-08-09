@@ -455,6 +455,7 @@ function tcd_buildUI(thisObj) {
                     wholeList+= "--B--"
                 }
             }
+            //alert(wholeList)
             system.callSystem(userHomeFolder+"\\Documents\\GitHub\\JR_Video\\scripts\\JR_AE_Generate.bat " + wholeList);
         }
         myPal.grp.btnGrp.fileBtn.onClick = function () {

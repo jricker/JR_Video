@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 import sys
+import codecs
 import re
 from JR_system_class import System
 import xlwt
@@ -54,8 +56,19 @@ class Directory(System):
 		font0.name = 'Arial'
 		font0.colour_index = 87
 		font0.bold = True
+		# Protect worksheet - all cells will be read-only by default
+		#my_worksheet.protect = True  # defaults to False
+		#my_worksheet.password = "something_difficult_to_guess"
 		#
-		st = xlwt.easyxf('pattern: pattern solid;')
+		## Create cell styles for both read-only and editable cells
+		#editable = easyxf("protection: cell_locked false;")
+		#read_only = easyxf("")  # "cell_locked true" is default
+		#
+		## Apply your new styles when writing cells
+		#my_worksheet.write(0, 0, "Can't touch this!", read_only)
+		#my_worksheet.write(2, 2, "Erase me :)", editable)
+		# style for Top Row
+		st = xlwt.easyxf('pattern: pattern solid')
 		st.pattern.pattern_fore_colour = 44
 		st.font = font0
 		#BOARDERS
@@ -64,17 +77,20 @@ class Directory(System):
 		borders.right = 1
 		borders.top = 1
 		borders.bottom = 1
-		#style for data
-		st2 = xlwt.easyxf('pattern: pattern solid; borders: bottom dashed, left dashed')
+		# style for original data
+		st2 = xlwt.easyxf('pattern: pattern solid; borders: bottom dashed, left dashed; align: wrap 1')
 		st2.pattern.pattern_fore_colour = 22
 		st2.font = font0
 		st2.borders = borders
-		#style for comps
+		# style for comps
 		st3 = xlwt.easyxf('pattern: pattern solid; borders: bottom dashed, left dashed')
 		st3.pattern.pattern_fore_colour = 26
 		st3.font = font0
 		st3.borders = borders
+		#
+		st4 = xlwt.easyxf('protection: cell_locked false; align: wrap 1')
 		tt = 0
+		pp = 1
 		for i in information:
 			tt+=1
 			a = information.get(i)
@@ -82,8 +98,13 @@ class Directory(System):
 			ws.write(tt, 0, i, st3)
 			for x in range(aLen):
 				#print tt
-				print i + '=' + a[x]
-				ws.write(tt, 1, a[x], st2)
+				for ii in range(11):
+					pp+=1
+					ws.write(tt, pp, '', st4)
+				pp = 1 # reset for next round
+				#self.output_file.write('\n')
+				##self.output_file.write(a[x])
+				ws.write(tt, 1, a[x].decode('utf-8'), st2)
 				tt +=1
 		### CREATE THE FIELDS FOR THIS ###
 		ws.write(0, 0, 'COMP', st)
@@ -99,8 +120,12 @@ class Directory(System):
 		ws.write(0, 10, 'AUSTRALIA', st)
 		ws.write(0, 11, 'NORTH AMERICA', st)
 		ws.write(0, 12, 'WORLD WIDE (GENERAL)', st)
+		#############################
+		ws.protect = True
+		ws.password = "password1"
 		for i in range(13):
 			ws.col(i).width = 5000# + i
+		ws.col(1).width = 9000# + i
 		wb.save(self.userName+'/Desktop/original_text.xls')
 	def Run(self, variables):
 		g = self.regFind(variables, '--B--')
@@ -134,5 +159,5 @@ class Directory(System):
 		self.createExcelDocument(textDictionary)
 if __name__ == '__main__':
 	K = Directory()
-	variables = sys.argv[1]
+	variables = sys.argv[1].decode('cp1252').encode('utf-8')
 	K.Run(variables)
