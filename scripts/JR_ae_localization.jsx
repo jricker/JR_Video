@@ -674,7 +674,7 @@ function replaceText() {
         // until end-of-file is reached
         while (!myFile.eof){
             t = myFile.readln();
-            var line = t.split(',');
+            var line = t.split(':,:,:');
             for (var i=1; i<=itemTotalOne; i++){
                 curItemOne = projOne.item(i);
                 if (curItemOne instanceof CompItem){

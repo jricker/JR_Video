@@ -105,7 +105,7 @@ class ProcessExcelDoc(System):
 					self.output_file.write("'"+i[x]+"'"+u'\r\n')
 					#self.output_file.write(u'\r\n')
 				else:
-					self.output_file.write("'"+i[x]+"'"+',')
+					self.output_file.write("'"+i[x]+"'"+':,:,:')
 			self.output_file.write('\n')
 			#out.write(u'ЛОКАЛИЗАЦИЯ')#str(i)[1:-1]+'\n')
 			#self.output_file.write(str(i)[1:-1]+'\n')
