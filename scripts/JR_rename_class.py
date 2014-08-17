@@ -31,6 +31,8 @@ class Rename():
 		else:
 			return self.getNamespace(i) # if none of the above then there is no namespace in the input name and we want to return the selection namespace.
 	def processRename(self, i):
+		pad = '0000'
+		iteratorPadding = (pad[:len(pad)-len(str(i))] + str(int(i) ) )
 		if self.selection[-1][0] == '_': # Suffix addition only
 			return ( self.getAfterNamespace(i) + self.selection[-1] )
 		elif self.selection[-1][-1] == '_': # Prefix addition only
@@ -43,14 +45,14 @@ class Rename():
 		else:
 			if self.getIteratorValue(-1) == 1: # value of 1 means no iterator present in original name
 				if len(self.selection) > 2: # for more than one item selected
-					return ( self.getPrefix(-1) + '_' + str((int( self.getIteratorValue(-1) ) + int(i)))  )
+					return ( self.getPrefix(-1) + '_' + iteratorPadding  )
 				else: #for only one item selected
-					return self.getPrefix(-1) 
+					return self.getAfterNamespace(-1)
 			else:
 				if len(self.selection) > 2: # for more than one item selected
 					return ( self.getPrefix(-1) + str( ( int( self.getIteratorValue(-1) ) + int(i) ) ) + self.getSuffix(-1) )
 				else: #for only one item selected
-					return self.getPrefix(-1)
+					return self.getAfterNamespace(-1)
 	def reFunction(self, item, isolate):
 		# This method finds the location of 
 		# the provided isolate var in the 
