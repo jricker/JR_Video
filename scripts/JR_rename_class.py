@@ -9,8 +9,8 @@ class Rename():
 		self.selection = [input_data]
 		extension = input_data[[i for i, letter in enumerate(input_data) if letter == '.'][-1]:]
 		iteratorValue = input_data[self.getIteratorLocation(0)[-1][0]:self.getIteratorLocation(0)[-1][1]]
-		filepath = input_data[:[i for i, letter in enumerate(input_data) if letter == '/'][-1]+1 ]
-		filename = input_data[[i for i, letter in enumerate(input_data) if letter == '/'][-1]+1 : -len(extension) ]
+		filepath = input_data[:[i for i, letter in enumerate(input_data) if letter == '/' or letter == '\\'][-1]+1 ]
+		filename = input_data[[i for i, letter in enumerate(input_data) if letter == '/' or letter == '\\'][-1]+1 : -len(extension) ]
 		return extension, iteratorValue, filepath, filename
 	def processFinalName(self, input_data):
 		final_name_location = []

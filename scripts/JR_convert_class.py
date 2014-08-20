@@ -56,8 +56,11 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 		meta_file.close() # close the file now so we can remove it
 		os.remove(output_metadata)
 		return metadata
-	def img2mov(self, input_data = 'NA', metadata = 'NA'):
-		##############################################################################################################################################
+	def img2mov(self, input_data = 'NA', metadata = 'NA', output_format = 'ProRes', size = '1920x1080'):
+		if output_format == 'ProRes':
+			output_ext = '.mov'
+		elif output_format == 'H264':
+			output_ext = '.mp4'
 		##############################################################################################################################################
 		compression_01 = self.compression[1] # use the original compression file which is 01 for it's data
 		compression_02 = self.compression[1][:-6]+'02.vcf' # then write out to compression file 02 each line but with the updated FPS
@@ -65,38 +68,36 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 		compression_file_amend = open(compression_02, 'w')
 		compression_lines = compression_file.readlines()
 		firstLine = 'VirtualDub.video.SetFrameRate2' # this is the line we're searching for in the .vcf file for vdub - amend FPS on it
+		if metadata != 'NA':
+			##############################################################################################################################################
+			if len(metadata['FPS']) == 2:
+				percent = '1'
+			elif len(metadata['FPS']) == 3:
+				percent = '10'
+			elif len(metadata['FPS']) == 4:
+				percent = '100'
+			elif len(metadata['FPS']) == 5:
+				percent = '1000'
+			for line in compression_lines:
+				if line.startswith(firstLine):
+					line = firstLine + '('+str(metadata['FPS'])+','+percent+',1);\n'
+				compression_file_amend.write(line) # now write the line out with the proper FPS for the shot.
+			compression_file.close()
+			compression_file_amend.close()
+			##############################################################################################################################################
+			## Get width x height ########################################################################################################################
+			WxH = str(metadata['Width'])+'x'+str(metadata['Height'])
+			if WxH == '0x0': # this is here in case there wasn't any metadata to extract, default back to 1920x1080
+				WxH = '1920x1080'
+			resizeWxH = '"'+'640 360'+'"' # we resize the width and hight for the initial TIF export so it isn't so massive. Start off with 640x360 as a base
+			if 1919 < metadata['Width'] < 2048:
+				resizeWxH = '"'+ str(int(metadata['Width'])/3)+' '+str(int(metadata['Height'])/3) + '"'
+			if 2047 < metadata['Width'] < 4096:
+				resizeWxH = '"'+ str(int(metadata['Width'])/4)+' '+str(int(metadata['Height'])/4) + '"'
+			if 4096 < metadata['Width']:
+				resizeWxH = '"'+ str(int(metadata['Width'])/8)+' '+str(int(metadata['Height'])/8) + '"'
 		##############################################################################################################################################
-		##############################################################################################################################################
-		if len(metadata['FPS']) == 2:
-			percent = '1'
-		elif len(metadata['FPS']) == 3:
-			percent = '10'
-		elif len(metadata['FPS']) == 4:
-			percent = '100'
-		elif len(metadata['FPS']) == 5:
-			percent = '1000'
-		for line in compression_lines:
-			if line.startswith(firstLine):
-				line = firstLine + '('+str(metadata['FPS'])+','+percent+',1);\n'
-			compression_file_amend.write(line) # now write the line out with the proper FPS for the shot. 
-		compression_file.close()
-		compression_file_amend.close()
-		##############################################################################################################################################
-		## Get width x height ########################################################################################################################
-		# 
-		WxH = str(metadata['Width'])+'x'+str(metadata['Height'])
-		if WxH == '0x0': # this is here in case there wasn't any metadata to extract, default back to 1920x1080
-			WxH = '1920x1080'
-		resizeWxH = '"'+'640 360'+'"' # we resize the width and hight for the initial TIF export so it isn't so massive. Start off with 640x360 as a base
-		if 1919 < metadata['Width'] < 2048:
-			resizeWxH = '"'+ str(int(metadata['Width'])/3)+' '+str(int(metadata['Height'])/3) + '"'
-		if 2047 < metadata['Width'] < 4096:
-			resizeWxH = '"'+ str(int(metadata['Width'])/4)+' '+str(int(metadata['Height'])/4) + '"'
-		if 4096 < metadata['Width']:
-			resizeWxH = '"'+ str(int(metadata['Width'])/8)+' '+str(int(metadata['Height'])/8) + '"'
-		##############################################################################################################################################
-		##############################################################################################################################################
-		QT_final_name = self.processFinalName(input_data)+'.mov' #for renaming the QT without the iterations or seperators
+		QT_final_name = self.processFinalName(input_data)+output_ext #for renaming the QT without the iterations or seperators
 		processed = self.processInput(input_data) #grab the name ouputs from the rename class
 		output_data = processed[2]+processed[3]
 		parent_name = processed[2]+processed[3]
@@ -109,11 +110,9 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 		except TypeError:
 			parent_folder = processed[2]
 		##############################################################################################################################################
-		##############################################################################################################################################
 		JPG_folder = processed[2] + '\\JPG_temp\\' # find the last . in the string to create the name of the file for avi and mov output.		
 		if parent_folder.endswith("RENDER"): # Find the render folder, should be -5 up as the parent_folder VAR dictates?
 			parent_name = parent_folder + '\\01_MOV' + parent_name[[i for i, letter in enumerate(parent_name) if letter == '\\'][-1]: ]
-		##############################################################################################################################################
 		##############################################################################################################################################
 		if processed[0] == '.exr' or processed[0] == '.tif':
 			batch_cmd = "EXR2IMG2MOV"
@@ -132,10 +131,17 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 			action = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+JPG_output+'_temp_0000.jpg'+'"' + ' ' + compression_02 + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH + ' ' + self.djv + ' ' + '"'+output_data+iteration+processed[0]+'"' + ' ' + JPG_output )
 			os.system(action)
 		else:
+			WxH = size
 			batch_cmd = "IMG2MOV"
-			setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + compression_02 + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' + self.vlc)
-			os.system(setup)
-		os.rename(parent_name+'.mov', parent_folder+QT_final_name) # rename the file after all is set and done. 
+			if output_format == 'ProRes':
+				setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + self.compression[0] + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH+ ' ' + output_format)
+				os.system(setup)
+			elif output_format == 'H264':
+				setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + self.compression[0] + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH+ ' ' + output_format)
+				os.system(setup)
+			#setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + compression_02 + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' + self.vlc)
+		# \/ reinstate this at the end to rename once everything is working properly again
+		os.rename(parent_name+output_ext, parent_folder+QT_final_name) # rename the file after all is set and done. 
 		##############################################################################################################################################
 		##############################################################################################################################################
 		if os.path.exists(JPG_folder):

@@ -37,10 +37,18 @@ goto theend
 :ok
 echo Ok, done
 :theend
+if %~8 == H264 goto convertH264
+if %~8 == ProRes goto convertProRes
+:convertProRes
 ::%5 -i "%~6.avi" -y -vcodec libx264 -s "1920x1080" -b:v 5000k -codec:a libvo_aacenc "%~6.mov"
 %5 -i "%~6.avi" -y -vcodec prores -profile:v 0 -s %7 -bits_per_mb 8000 %6.mov
+del "%~6.avi"
+goto END
+::
+:convertH264
+%5 -i "%~6.avi" -y -vcodec libx264 -b:v 5000k -s %7 -codec:a libvo_aacenc %6.mp4
 ::%5 -i "%~6.avi" -y -vcodec prores -profile:v 0 -s hd1080 -bits_per_mb 8000 %6.mov
-::del "%~6.avi"
+del "%~6.avi"
 ::touch -m "%~6.mov"
 ::%7 %6.mov
 goto END

@@ -1,6 +1,7 @@
 import os
 import re
 from JR_rename_class import Rename
+import Tkinter, tkFileDialog
 class System(Rename):
     def __init__(self):
         Rename.__init__(self)
@@ -22,9 +23,23 @@ class System(Rename):
         self.scripts = self.userName +"\\Documents\\GitHub\\JR_Video\\scripts"
         self.settings = self.userName +"\\Documents\\GitHub\\JR_Video\\settings"
         self.sequences = self.systemLocation + "test\\sequences"
+        # CACHE ITEMS
+        self.buttonReturnCache = ''
         ## SETTINGS
-        self.compression = self.settings + '\\vDub_compression\\vDub_avi_compression.vcf', self.settings + '\\vDub_compression\\vDub_avi_compression_custom_01.vcf', self.settings + '\\vDub_compression\\vDub_avi_compression_23976.vcf'
-        self.prores = {'ProRes422_Proxy': 0, 'ProRes422_LT':1, 'ProRes422_Normal':2, 'ProRes422_HQ':3 }
+        # VDUB COMPRESSION
+        self.compression = (
+            self.settings + '\\vDub_compression\\vDub_avi_compression.vcf', 
+            self.settings + '\\vDub_compression\\vDub_avi_compression_custom_01.vcf',
+            self.settings + '\\vDub_compression\\vDub_avi_compression_custom_02.vcf',  
+            self.settings + '\\vDub_compression\\vDub_avi_compression_23976.vcf'
+            )
+        # PRORES
+        self.prores = {
+        'ProRes422_Proxy': 0, 
+        'ProRes422_LT':1, 
+        'ProRes422_Normal':2, 
+        'ProRes422_HQ':3 
+        }
     def systemStart(self, app):
         os.system('"''start '+app+'"')
     def findFolder(self, input_data, folderName):
@@ -34,6 +49,25 @@ class System(Rename):
             high = [x for x in pp if x > ii]
             low = [x for x in pp if x < ii]
             return input_data[:high[0]], input_data[low[-1]+1:high[0]]
+    def setDirectory(self, message = 'Please select a folder'):
+        root = Tkinter.Tk()
+        root.withdraw()
+        X = tkFileDialog.askdirectory(parent=root,initialdir="/",title= message)
+        return X
+    def returnItem(self, item):
+        self.buttonReturnCache = item
+    def setProResFormat(self):
+        pass
+    def getFileList (self, dirPath, name, uniq=True,sorted=True):
+        X = []
+        for dirpath,dirnames,filenames in os.walk(dirPath):
+            for file in filenames:
+                if name in file:
+                    X.append(dirpath)
+        return X
+        #Y = set(X)
+        #return sorted(Y)
+                    #self.screenshotDirectory.append(dirpath)
     def regFind(self, itemToSearch, searchForThis):
         d = itemToSearch
         s = re.compile(r'/*'+searchForThis) # this finds the backslashes in the to be created directory
