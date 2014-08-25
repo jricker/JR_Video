@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import sys
-import codecs
 import re
 from JR_system_class import System
 import xlwt

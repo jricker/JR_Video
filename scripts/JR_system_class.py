@@ -24,7 +24,7 @@ class System(Rename):
         self.settings = self.userName +"\\Documents\\GitHub\\JR_Video\\settings"
         self.sequences = self.systemLocation + "test\\sequences"
         # CACHE ITEMS
-        self.buttonReturnCache = ''
+        self.BRC = ''
         ## SETTINGS
         # VDUB COMPRESSION
         self.compression = (
@@ -55,7 +55,7 @@ class System(Rename):
         X = tkFileDialog.askdirectory(parent=root,initialdir="/",title= message)
         return X
     def returnItem(self, item):
-        self.buttonReturnCache = item
+        self.BRC = item
     def setProResFormat(self):
         pass
     def getFileList (self, dirPath, name, uniq=True,sorted=True):

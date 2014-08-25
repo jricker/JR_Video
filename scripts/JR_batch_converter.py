@@ -65,19 +65,18 @@ class batchConvert(Convert, UI):
         # CREAT BUTTONS FOR OPTIONS
         self.CreateButtons(input_data={'ProRes':'self.returnItem("ProRes")', 'H264':'self.returnItem("H264")'} )
         ########################################################################################################
-        output_format = self.buttonReturnCache
-        self.finalSet.append(self.findScreenshots(directory))
-    	for i in self.finalSet[0]:
-            firstImage = ''
-            for dirpath,dirnames,filename in os.walk(i):
-                for file in filename:
-                    if 'Screenshot' in file:
-                        firstImage = file
-                        break
-                item = i+'\\'+firstImage
-                self.img2mov(input_data = item, output_format = output_format )
-           		#print item # this is where we'll have to put in the create mov out of img
-                #self.
+        if self.BRC != '':
+            output_format = self.BRC
+            self.finalSet.append(self.findScreenshots(directory))
+            for i in self.finalSet[0]:
+                firstImage = ''
+                for dirpath,dirnames,filename in os.walk(i):
+                    for file in filename:
+                        if 'Screenshot' in file:
+                            firstImage = file
+                            break
+                    item = i+'\\'+firstImage
+                    self.img2mov(input_data = item, output_format = output_format )
     def batch_moveH264(self, sourceDirectory):
         destinationDirectory = self.setDirectory('Select Folder to Move Content To:')
     	X = self.findH264(sourceDirectory, destinationDirectory)

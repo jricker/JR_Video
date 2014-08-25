@@ -6,6 +6,7 @@ class UI(System):
         System.__init__(self)
         self.tk = Tk()
     def CreateButtons(self, input_data, color = '#136ec7', title = '', ):
+        self.BRC = '' # reset button cash on button build call
         self.tk.title(title)
         self.tk.overrideredirect(1)
         text_width = ''
@@ -22,7 +23,10 @@ class UI(System):
         middle_width = pointer_x - row_width
         self.tk.geometry('+'+str(int(middle_width))+'+'+str(pointer_y-20) )
         self.tk.bind('<Escape>', quit) # BIND TO ESC KEY
+        self.tk.bind("<FocusOut>", self.killWindow)
         self.tk.mainloop()
+    def killWindow(self, event):
+        self.tk.destroy()
     def test1(self,value):
         exec value
         self.tk.destroy()
@@ -33,7 +37,7 @@ if __name__ == '__main__':
     #names = {'422_Proxy':'Proxy', '422_LT':'Light', '422_Normal':'Normal', '422_HQ':'highquality'}
     K.CreateButtons(
         input_data={
-        '422_Proxy':'self.test2(text = "proxy")', 
+        '422_Proxy':'self.test2("light")', 
         '422_LT':'self.test2("light")', 
         '422_Normal':'self.test2("normal")', 
         '422_HQ':'self.test2("highquality")'
