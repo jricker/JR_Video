@@ -455,8 +455,24 @@ function tcd_buildUI(thisObj) {
                     wholeList+= "--B--"
                 }
             }
-            //alert(wholeList)
-            system.callSystem(userHomeFolder+"\\Documents\\GitHub\\JR_Video\\scripts\\JR_AE_Generate.bat " + wholeList);
+            var final_list = ''
+            for (var i=0; i<wholeList.length; i++) {
+                if(wholeList[i] == '&'){
+                    final_list += '%26'
+                }else if(wholeList[i] == '>'){
+                    final_list += '%'+'3E'
+                }else if(wholeList[i] == '<'){
+                    final_list += '%'+'3C'
+                }else if(wholeList[i] == '|'){
+                    final_list += '%'+'7C'
+                }else if(wholeList[i] == '\\'){
+                    final_list += '%'+'5C'
+                } else {
+                    final_list += wholeList[i]
+                }
+            }
+            //
+            system.callSystem(userHomeFolder+"\\Documents\\GitHub\\JR_Video\\scripts\\JR_AE_Generate.bat " + final_list);
         }
         myPal.grp.btnGrp.fileBtn.onClick = function () {
             var myFile = File.openDialog("Select a text file to open.", "");//, "TEXT txt")
@@ -667,6 +683,7 @@ function replaceText() {
     projOne = app.project;
     itemTotalOne = projOne.numItems;
     // open file
+    var xx = 0
     var fileOK = myFile.open("r","TEXT","????");
     if (fileOK){
         var curItemOne
@@ -682,13 +699,29 @@ function replaceText() {
                         compLayers = curItemOne.numLayers;
                         for (var y = 1; y<=compLayers; y++){
                             curLayer = curItemOne.layer(y)
-                            replace = myTrim(line[1])
-                            //alert(replace)
-                            s = myTrim(curLayer.name)
-                            source = "'"+s+"'"
-                            // make lower case just in case ?YYYYYY
-                            if (source.toLowerCase() == replace.toLowerCase() ){
-                                curLayer.property("Text").property("sourceText").setValue(line[2].slice(1,-1))
+                            if (curLayer instanceof TextLayer) {
+                                xx++
+                                replace = myTrim(line[1].slice(1,-1))
+                                //alert(replace)
+                                //s = myTrim(curLayer.name)
+                                AA = curLayer.property("Text").property("sourceText").value;
+                                //s = new String(AA);
+                                source = myTrim(String(AA) )
+                                //BB = String.valueOf(AA)
+                                //alert(BB)
+                                //BB = replace.slice(1,-1)
+                                //alert(BB)
+                                //if (source.toLowerCase() == replace.toLowerCase() ){
+                                //alert(xx)
+                                //alert(String(line[0]) + ' ' + String(line[1]) + ' ' + String(line[2]))
+                                //alert(source + 'SOURCE')
+                                //alert(replace + 'REPLACE')
+                                if (source.toLowerCase() == replace.toLowerCase()){
+                                    //alert('yes')
+                                    //alert(curLayer.property("Text").property("sourceText").value)
+                                    //alert(replace.slice(1,-1))
+                                    curLayer.property("Text").property("sourceText").setValue(line[2].slice(1,-1))
+                                }
                             }
                         }
                     }

@@ -3,11 +3,17 @@ import shutil
 import JR_convert_class
 ########################################################################################
 convert = JR_convert_class.Convert()
-project_file = "D:\\GATEBIL\\03_EDITS\\02_PREMIER_PROJECT\\GATEBIL_EDIT_HIGHRES.prproj"
+#project_file = "D:\\GATEBIL\\03_EDITS\\02_PREMIER_PROJECT\\GATEBIL_EDIT_HIGHRES.prproj"
+#project = open(project_file, 'r')
+#original_folder = "H:\\Gatetbil 2014"
+#HQ_folder = "D:\\GATEBIL\\02_FOOTAGE\\03_MOV\\01_HQ"
+#new_relative_path = "..\\..\\02_FOOTAGE\\03_MOV\\00_HQ\\"
+##
+project_file = "D:\\JAPAN\\03_EDITS\\02_PREMIER_PROJECT\\JAPAN_EDIT_HIGHRES.prproj"
 project = open(project_file, 'r')
-original_folder = "H:\\Gatetbil 2014"
-HQ_folder = "D:\\GATEBIL\\02_FOOTAGE\\03_MOV\\01_HQ"
-new_relative_path = "..\\..\\02_FOOTAGE\\03_MOV\\00_HQ\\"
+original_folder = "G:\\JAPAN"
+HQ_folder = "D:\\JAPAN\\02_FOOTAGE\\03_MOV\\01_HQ"
+new_relative_path = "..\\..\\02_FOOTAGE\\03_MOV\\01_HQ\\"
 tempList = []
 ########################################################################################
 for line in project:
@@ -49,13 +55,13 @@ for i in range(len(original_list)):
 	if os.path.exists(HQ_list[i]):
 		pass
 	else:
-		if original_list[i].endswith('.MXF'):
-			if os.path.exists(HQ_list[i][:-4]+'.mov'): # have to do this because Adobe can't use MXF file types
-				pass
-			else:
-				convert.mov2prores(original_list[i], HQ_list[i][:-4]+'.mov')
-		else:
-			shutil.copy(original_list[i], HQ_folder)
+		#if original_list[i].endswith('.MXF'):
+		#	if os.path.exists(HQ_list[i][:-4]+'.mov'): # have to do this because Adobe can't use MXF file types
+		#		pass
+		#	else:
+		#		convert.mov2prores(original_list[i], HQ_list[i][:-4]+'.mov')
+		#else:
+		shutil.copy(original_list[i], HQ_folder)
 input_file = open(project_file, 'r',)
 output_file = open(project_file[:-7]+"01.prproj", 'w')
 ########################################################################################
@@ -70,8 +76,9 @@ for lines in input_file:
 			middle = lines[beginning+1:MP4]
 			end = lines.rfind("</")
 			for i in HQ_list:
-				if i.endswith(".MXF"):
-					i = i[:-4]+'.mov'
+				#if i.endswith(".MXF"):
+				#	#i = i[:-4]+'.mov'
+				#	i = i[:-4]+'.MXF'
 				if middle in i:
 					original_middle = lines[beginning+1:end]
 					#print '----------------TITLE OR NAME ------------------------------'
@@ -85,8 +92,9 @@ for lines in input_file:
 			middle = lines[backspace+1:MP4]
 			end = lines.rfind("</")
 			for i in HQ_list:
-				if i.endswith(".MXF"):
-					i = i[:-4]+'.mov'
+				#if i.endswith(".MXF"):
+				#	#i = i[:-4]+'.mov'
+				#	i = i[:-4]+'.MXF'
 				if str(middle) in str(i):
 					original_middle = lines[beginning+1:end]
 					#print '---------------- FILE PATH OR ACTUAL MEDIA PATH ------------------------------'
@@ -100,8 +108,9 @@ for lines in input_file:
 			middle = lines[backspace+1:MP4]
 			end = lines.rfind("</")
 			for i in HQ_list:
-				if i.endswith(".MXF"):
-					i = i[:-4]+'.mov'
+				#if i.endswith(".MXF"):
+				#	#i = i[:-4]+'.MXF'
+				#	i = i[:-4]+'.mov'
 				if str(middle) in str(i):
 					original_middle = lines[beginning+1:end]
 					#print '---------------- FILE PATH OR ACTUAL MEDIA PATH ------------------------------'

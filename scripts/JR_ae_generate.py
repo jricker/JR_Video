@@ -3,7 +3,7 @@ import sys
 import re
 from JR_system_class import System
 import xlwt
-import xlrd
+#import xlrd
 class Directory(System):
 	def __init__(self):
 		System.__init__(self)
@@ -13,38 +13,38 @@ class Directory(System):
 		f = s.finditer(d)
 		g = [ x.span() for x in f ]
 		return g
-	def readExcelDocument(self):
-		workbook = xlrd.open_workbook(self.userName + '/Desktop/original_text.xls')
-		worksheet = workbook.sheet_by_name('Text')
-		num_rows = worksheet.nrows - 1
-		num_cells = worksheet.ncols - 1
-		curr_row = -1
-		tempList = []
-		while curr_row < num_rows:
-			curr_row += 1
-			#print 'Row:', curr_row
-			curr_cell = -1
-			if curr_row == 0:
-				pass
-			else:
-				while curr_cell < num_cells:
-					curr_cell += 1
-					# Cell Types: 0=Empty, 1=Text, 2=Number, 3=Date, 4=Boolean, 5=Error, 6=Blank
-					cell_value = worksheet.cell_value(curr_row, curr_cell)
-					if curr_cell == 0:
-						compositionQuery = cell_value = worksheet.cell_value(curr_row, curr_cell)
-						if compositionQuery == '':
-							pass
-						else:
-							composition = compositionQuery
-					if cell_value == '':
-						pass
-					else:
-						if worksheet.cell_value(0, curr_cell) == 'COMP':
-							pass
-						else:
-							tempList.append('Comp ->', composition, '    ', 'Language ->', worksheet.cell_value(0, curr_cell), '    ', 'text ->', cell_value)
-		return tempList
+	########def readExcelDocument(self):
+	########	workbook = xlrd.open_workbook(self.userName + '/Desktop/original_text.xls')
+	########	worksheet = workbook.sheet_by_name('Text')
+	########	num_rows = worksheet.nrows - 1
+	########	num_cells = worksheet.ncols - 1
+	########	curr_row = -1
+	########	tempList = []
+	########	while curr_row < num_rows:
+	########		curr_row += 1
+	########		#print 'Row:', curr_row
+	########		curr_cell = -1
+	########		if curr_row == 0:
+	########			pass
+	########		else:
+	########			while curr_cell < num_cells:
+	########				curr_cell += 1
+	########				# Cell Types: 0=Empty, 1=Text, 2=Number, 3=Date, 4=Boolean, 5=Error, 6=Blank
+	########				cell_value = worksheet.cell_value(curr_row, curr_cell)
+	########				if curr_cell == 0:
+	########					compositionQuery = cell_value = worksheet.cell_value(curr_row, curr_cell)
+	########					if compositionQuery == '':
+	########						pass
+	########					else:
+	########						composition = compositionQuery
+	########				if cell_value == '':
+	########					pass
+	########				else:
+	########					if worksheet.cell_value(0, curr_cell) == 'COMP':
+	########						pass
+	########					else:
+	########						tempList.append('Comp ->', composition, '    ', 'Language ->', worksheet.cell_value(0, curr_cell), '    ', 'text ->', cell_value)
+	########	return tempList
 	def createExcelDocument(self, information):
 		#print information, ' THIS IS INFOREMATION'
 		wb = xlwt.Workbook()
@@ -103,6 +103,8 @@ class Directory(System):
 				pp = 1 # reset for next round
 				#self.output_file.write('\n')
 				##self.output_file.write(a[x])
+				#print a[x]
+				#print a[x].decode('utf-8')
 				ws.write(tt, 1, a[x].decode('utf-8'), st2)
 				tt +=1
 		### CREATE THE FIELDS FOR THIS ###
@@ -120,8 +122,8 @@ class Directory(System):
 		ws.write(0, 11, 'NORTH AMERICA', st)
 		ws.write(0, 12, 'WORLD WIDE (GENERAL)', st)
 		#############################
-		ws.protect = True
-		ws.password = "password1"
+		#ws.protect = True
+		#ws.password = "password1"
 		for i in range(13):
 			ws.col(i).width = 5000# + i
 		ws.col(1).width = 9000# + i
@@ -156,7 +158,68 @@ class Directory(System):
 					textDictionary[key].append(value)
 				#
 		self.createExcelDocument(textDictionary)
+	def test(self, items):
+		print items
 if __name__ == '__main__':
 	K = Directory()
 	variables = sys.argv[1].decode('cp1252').encode('utf-8')
+	"""
+	and_sym = '%26' 		#&
+	colon_sym= "%" + '3A' 	#:
+	smiCol_sym= "%" + '3B' 	#;
+	apost_sym = "%"+'u2018' #'
+	comma_sym = '%'+'2C' 	#,
+	ex_sym = '%21' 			#!
+	dbQuote_sym = 'u201C' 	#"
+	sterling_sym = '%'+'A3' #£
+	money_sym = '%24' 		#$
+	perc_sym = '%25' 		#%
+	upArow_sym = '%'+'5E' 	#^
+	column_L_sym = '%28' 	#(
+	column_R_sym = '%29' 	#)
+	equals_sym = '%'+'3D' 	#=
+	dic_L_sym = '%'+'7B' 	#{
+	dic_R_sym = '%'+'7D' 	#}
+	lst_L_sym = '%'+'5B' 	#[
+	lst_R_sym = '%'+'5D' 	#[
+	lst_R_sym = '%'+'5D' 	#[
+	pound_sym = '%23'		##
+	squiggle_sum = '%'+'7E'	#~
+	question_sym = '%'+'3F' #?
+	great_sym = '%'+'3E'	#>
+	less_sym = '%'+'3C'		#<
+	backsl_sym = '%'+'5C'	#
+	vertLn_sym = '%'+'7C'	#|
+	hiApos_sym = '%60'		#`
+	ind_sym = '%'+'AC'		#¬
+	brkLn_sym = '%'+'A6'	#¦
+	euro_sym = '%'+'u20AC'	#€
+	copWrt_sym = '%'+'A9'	#©
+	tm_sym = '%'+'u2122'	#™
+	reg_sym = '%'+'AE'		#®
+	"""	
+	#################################################################
+	and_sym = '%26'			#&
+	great_sym = '%'+'3E'	#>
+	less_sym = '%'+'3C'		#<
+	vertLn_sym = '%'+'7C'	#|
+	backsl_sym = '%'+'5C'	#\
+	#################################################################
+	and_count = [m.start() for m in re.finditer(and_sym, variables)]
+	great_count = [m.start() for m in re.finditer(great_sym, variables)]
+	less_count = [m.start() for m in re.finditer(less_sym, variables)]
+	vertLn_count = [m.start() for m in re.finditer(vertLn_sym, variables)]
+	backsl_count = [m.start() for m in re.finditer(backsl_sym, variables)]
+	#################################################################
+	for i in range(len(and_count)):
+		variables = variables.replace(and_sym, '&', i+1)
+	for i in range(len(great_count)):
+		variables = variables.replace(great_sym, '>', i+1)
+	for i in range(len(less_count)):
+		variables = variables.replace(less_sym, '<', i+1)
+	for i in range(len(vertLn_count)):
+		variables = variables.replace(vertLn_sym, '|', i+1)
+	for i in range(len(backsl_count)):
+		variables = variables.replace(backsl_sym, '\\', i+1)
+	#################################################################
 	K.Run(variables)

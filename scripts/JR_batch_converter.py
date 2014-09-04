@@ -93,7 +93,8 @@ class batchConvert(Convert, UI):
 if __name__ == '__main__':
     H264  = 'C:\\Users\\James\\Desktop\\H264 Folder'
     batch = batchConvert()
-    batch.batch_SS2MOV(directory='C:\\Users\\James\\Desktop\\SHOTS')
+    batch.batc
+    #batch.batch_SS2MOV(directory='C:\\Users\\James\\Desktop\\SHOTS')
     #batch.batch_moveH264(H264)
     #batch.findH264(batch.destDirectory)
     #batch.findScreenshots('C:\\Users\\James\\Desktop\\SHOTS')

@@ -340,6 +340,7 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 		return REGHEX_from_txt
 if __name__ == '__main__':
 	conversion = Convert()
+	#conversion.mov2prores('D:/A007C052_140704UX.MXF', 'D:/A007C052_140704UX.mov')
 	if sys.argv[2] == 'IMG2MOV':
 		conversion.img2mov(sys.argv[1])
 	elif sys.argv[2] == 'RENAME':

@@ -1,10 +1,10 @@
-from Tkinter import *
+import Tkinter as TK
 from functools import partial
 from JR_system_class import System
 class UI(System):
     def __init__(self):
         System.__init__(self)
-        self.tk = Tk()
+        self.tk = TK.Tk()
     def CreateButtons(self, input_data, color = '#136ec7', title = '', ):
         self.BRC = '' # reset button cash on button build call
         self.tk.title(title)
@@ -16,7 +16,7 @@ class UI(System):
         i = 0
         for name in input_data.keys():
             text_width += name
-            lb = Button(self.tk, text=name, bg = color, fg = 'white', command = partial(self.test1, input_data.get(name)) )
+            lb = TK.Button(self.tk, text=name, bg = color, fg = 'white', command = partial(self.test1, input_data.get(name)) )
             lb.grid(row=1, column=i)
             i += 1
         row_width = len(text_width) * 7.5/2

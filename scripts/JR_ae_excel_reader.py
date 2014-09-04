@@ -29,8 +29,10 @@ class ProcessExcelDoc(System):
 			regionCellValue = 9
 		elif region.upper() == 'AU':
 			regionCellValue = 10
-		elif region.upper() == 'WW':
+		elif region.upper() == 'NA':
 			regionCellValue = 11
+		elif region.upper() == 'WW':
+			regionCellValue = 12
 		return regionCellValue
 	########################################################################################################
 	def readExcel(self, region, excelDoc):
@@ -64,9 +66,10 @@ class ProcessExcelDoc(System):
 							pass
 						else:
 							if curr_cell == regionalValue:
-								again = cell_value.encode("utf-8")
+								cell_value_encoded = cell_value.encode("utf-8")
+								original_cell_value_encoded = original_cell_value.encode("utf-8")
 								regionData['ID'] = region
-								regionData['Comp'].append([region+'_'+composition, original_cell_value, again ])
+								regionData['Comp'].append([region+'_'+composition, original_cell_value_encoded, cell_value_encoded ])
 		for x in range(len(regionData['Comp'])):
 			a = regionData['Comp'][x]
 			for i in range(len(a)):
