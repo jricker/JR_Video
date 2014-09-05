@@ -3,7 +3,6 @@ import sys
 import re
 from JR_system_class import System
 import xlwt
-#import xlrd
 class Directory(System):
 	def __init__(self):
 		System.__init__(self)
@@ -13,38 +12,6 @@ class Directory(System):
 		f = s.finditer(d)
 		g = [ x.span() for x in f ]
 		return g
-	########def readExcelDocument(self):
-	########	workbook = xlrd.open_workbook(self.userName + '/Desktop/original_text.xls')
-	########	worksheet = workbook.sheet_by_name('Text')
-	########	num_rows = worksheet.nrows - 1
-	########	num_cells = worksheet.ncols - 1
-	########	curr_row = -1
-	########	tempList = []
-	########	while curr_row < num_rows:
-	########		curr_row += 1
-	########		#print 'Row:', curr_row
-	########		curr_cell = -1
-	########		if curr_row == 0:
-	########			pass
-	########		else:
-	########			while curr_cell < num_cells:
-	########				curr_cell += 1
-	########				# Cell Types: 0=Empty, 1=Text, 2=Number, 3=Date, 4=Boolean, 5=Error, 6=Blank
-	########				cell_value = worksheet.cell_value(curr_row, curr_cell)
-	########				if curr_cell == 0:
-	########					compositionQuery = cell_value = worksheet.cell_value(curr_row, curr_cell)
-	########					if compositionQuery == '':
-	########						pass
-	########					else:
-	########						composition = compositionQuery
-	########				if cell_value == '':
-	########					pass
-	########				else:
-	########					if worksheet.cell_value(0, curr_cell) == 'COMP':
-	########						pass
-	########					else:
-	########						tempList.append('Comp ->', composition, '    ', 'Language ->', worksheet.cell_value(0, curr_cell), '    ', 'text ->', cell_value)
-	########	return tempList
 	def createExcelDocument(self, information):
 		#print information, ' THIS IS INFOREMATION'
 		wb = xlwt.Workbook()
@@ -55,17 +22,6 @@ class Directory(System):
 		font0.name = 'Arial'
 		font0.colour_index = 87
 		font0.bold = True
-		# Protect worksheet - all cells will be read-only by default
-		#my_worksheet.protect = True  # defaults to False
-		#my_worksheet.password = "something_difficult_to_guess"
-		#
-		## Create cell styles for both read-only and editable cells
-		#editable = easyxf("protection: cell_locked false;")
-		#read_only = easyxf("")  # "cell_locked true" is default
-		#
-		## Apply your new styles when writing cells
-		#my_worksheet.write(0, 0, "Can't touch this!", read_only)
-		#my_worksheet.write(2, 2, "Erase me :)", editable)
 		# style for Top Row
 		st = xlwt.easyxf('pattern: pattern solid')
 		st.pattern.pattern_fore_colour = 44
@@ -101,10 +57,6 @@ class Directory(System):
 					pp+=1
 					ws.write(tt, pp, '', st4)
 				pp = 1 # reset for next round
-				#self.output_file.write('\n')
-				##self.output_file.write(a[x])
-				#print a[x]
-				#print a[x].decode('utf-8')
 				ws.write(tt, 1, a[x].decode('utf-8'), st2)
 				tt +=1
 		### CREATE THE FIELDS FOR THIS ###
@@ -164,6 +116,7 @@ if __name__ == '__main__':
 	K = Directory()
 	variables = sys.argv[1].decode('cp1252').encode('utf-8')
 	"""
+	#LIST OF JAVA ESCAPE KEYS - just for reference
 	and_sym = '%26' 		#&
 	colon_sym= "%" + '3A' 	#:
 	smiCol_sym= "%" + '3B' 	#;
