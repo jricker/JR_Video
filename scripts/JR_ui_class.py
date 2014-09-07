@@ -5,6 +5,7 @@ class UI(System):
     def __init__(self):
         System.__init__(self)
         self.tk = TK.Tk()
+        self.tk.iconbitmap(default= self.images + "\UI\icon.ico") 
     def CreateButtons(self, input_data, color = '#136ec7', title = '', ):
         self.BRC = '' # reset button cash on button build call
         self.tk.title(title)
@@ -12,11 +13,10 @@ class UI(System):
         text_width = ''
         pointer_x = self.tk.winfo_pointerx()
         pointer_y = self.tk.winfo_pointery()
-        self.tk.iconbitmap(default= self.images + "\UI\icon.ico") 
         i = 0
         for name in input_data.keys():
             text_width += name
-            lb = TK.Button(self.tk, text=name, bg = color, fg = 'white', command = partial(self.test1, input_data.get(name)) )
+            lb = TK.Button(self.tk, text=name, bg = color, fg = 'white', command = partial(self.exec_action, input_data.get(name)) )
             lb.grid(row=1, column=i)
             i += 1
         row_width = len(text_width) * 7.5/2
@@ -27,19 +27,19 @@ class UI(System):
         self.tk.mainloop()
     def killWindow(self, event):
         self.tk.destroy()
-    def test1(self,value):
+    def exec_action(self,value):
         exec value
         self.tk.destroy()
-    def test2(self, text):
+    def print_test(self, text):
         print text
 if __name__ == '__main__':
     K = UI()
     #names = {'422_Proxy':'Proxy', '422_LT':'Light', '422_Normal':'Normal', '422_HQ':'highquality'}
     K.CreateButtons(
         input_data={
-        '422_Proxy':'self.test2("light")', 
-        '422_LT':'self.test2("light")', 
-        '422_Normal':'self.test2("normal")', 
-        '422_HQ':'self.test2("highquality")'
+        '422_Proxy':'self.print_test("light")', 
+        '422_LT':'self.print_test("light")', 
+        '422_Normal':'self.print_test("normal")', 
+        '422_HQ':'self.print_test("highquality")'
         } 
         )

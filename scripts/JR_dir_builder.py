@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import os
 import re
 import shutil # this module is used to copy files across to other directories
-from JR_system_class import *
+from JR_system_class import System 
 ############################
 JRsystem = System()
 ############################
@@ -20,7 +20,6 @@ folderList = []
 sharedFolderList = []
 directoryList = []
 userName = os.path.expanduser("~")
-#mainDirectory = '\\eucr-fs1.eu.ad.ea.com\\Studio\\HawaiiMarketing\\CINEMATICS\\MERCURY NFS15'
 mainDirectory = userName + '\\Desktop'
 masterXML = 'project.xgml'
 projectName = 'FRANK'
