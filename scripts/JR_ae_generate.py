@@ -16,6 +16,7 @@ class Directory(System):
 		#print information, ' THIS IS INFOREMATION'
 		wb = xlwt.Workbook()
 		ws = wb.add_sheet('Text')
+		ws2 = wb.add_sheet('Replace')
 		#
 		### GET THE STYLE GOING ###
 		font0 = xlwt.Font()
@@ -51,13 +52,16 @@ class Directory(System):
 			a = information.get(i)
 			aLen = len(a)
 			ws.write(tt, 0, i, st3)
+			ws2.write(tt, 0, i, st3)
 			for x in range(aLen):
 				#print tt
 				for ii in range(11):
 					pp+=1
 					ws.write(tt, pp, '', st4)
+					ws2.write(tt, pp, '', st4)
 				pp = 1 # reset for next round
 				ws.write(tt, 1, a[x].decode('utf-8'), st2)
+				ws2.write(tt, 1, a[x].decode('utf-8'), st2)
 				tt +=1
 		### CREATE THE FIELDS FOR THIS ###
 		ws.write(0, 0, 'COMP', st)
@@ -73,12 +77,19 @@ class Directory(System):
 		ws.write(0, 10, 'AUSTRALIA', st)
 		ws.write(0, 11, 'NORTH AMERICA', st)
 		ws.write(0, 12, 'WORLD WIDE (GENERAL)', st)
+		##
+		ws2.write(0, 0, 'COMP', st)
+		ws2.write(0, 1, 'ORIGINAL', st)
+		ws2.write(0, 2, 'REPLACE WITH', st)
 		#############################
 		#ws.protect = True
 		#ws.password = "password1"
 		for i in range(13):
 			ws.col(i).width = 5000# + i
+		for i in range(3):
+			ws2.col(i).width = 5000
 		ws.col(1).width = 9000# + i
+		ws2.col(1).width = 9000# + i
 		wb.save(self.userName+'/Desktop/original_text.xls')
 	def Run(self, variables):
 		g = self.regFind(variables, '--B--')

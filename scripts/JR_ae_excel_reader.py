@@ -13,6 +13,8 @@ class ProcessExcelDoc(System):
 		regionCellValue = 0
 		if region.upper() == 'UK':
 			regionCellValue = 2
+		elif region.upper() == 'REPLACE WITH':
+			regionCellValue = 2
 		elif region.upper() == 'IT':
 			regionCellValue = 3
 		elif region.upper() == 'FR':
@@ -35,14 +37,15 @@ class ProcessExcelDoc(System):
 			regionCellValue = 12
 		return regionCellValue
 	########################################################################################################
-	def readExcel(self, region, excelDoc):
+	def readExcel(self, region, excelDoc, worksheet_name):
+		regionalValue = self.processRegions(region)
+		regionData = {'ID':'', 'Comp':[],'Original':[], 'Text':[]}
 		workbook = xlrd.open_workbook(excelDoc)
-		worksheet = workbook.sheet_by_name('Text')
+		#worksheet = workbook.sheet_by_name('Text')
+		worksheet = workbook.sheet_by_name(worksheet_name)
 		num_rows = worksheet.nrows - 1
 		num_cells = worksheet.ncols - 1
 		curr_row = -1
-		regionalValue = self.processRegions(region)
-		regionData = {'ID':'', 'Comp':[],'Original':[], 'Text':[]}
 		while curr_row < num_rows:
 			curr_row += 1
 			curr_cell = -1
@@ -69,15 +72,20 @@ class ProcessExcelDoc(System):
 								cell_value_encoded = cell_value.encode("utf-8")
 								original_cell_value_encoded = original_cell_value.encode("utf-8")
 								regionData['ID'] = region
-								regionData['Comp'].append([region+'_'+composition, original_cell_value_encoded, cell_value_encoded ])
+								if region.upper() == 'REPLACE WITH': # this removes the region for the replace function to work
+									regionData['Comp'].append([composition, original_cell_value_encoded, cell_value_encoded ])
+								else:
+									regionData['Comp'].append([region+'_'+composition, original_cell_value_encoded, cell_value_encoded ])
 		for x in range(len(regionData['Comp'])):
 			a = regionData['Comp'][x]
 			for i in range(len(a)):
 				regionData['Comp'][x][i] = a[i].decode("utf-8")
 			self.final_list.append(regionData['Comp'][x])
+		print self.finalList
 		self.writeOut(self.final_list)
 	########################################################################################################
 	def writeOut(self, item):
+		print item
 		self.textFile = self.userName + '/Desktop/data.txt'
 		self.output_file = codecs.open(self.textFile, 'w', encoding = "utf-8")
 		for i in item:
@@ -95,6 +103,7 @@ if __name__ == '__main__':
 	Kk = ProcessExcelDoc()
 	theList = []
 	variable = sys.argv[1]
+	#variable = ',Replace With'
 	regList = Kk.regFind(variable, ',')
 	regList.insert(0, (0,0)) # adding 0 to the beginning to we can flow through it properly. 
 	for i in range(len(regList)):
@@ -105,9 +114,14 @@ if __name__ == '__main__':
 			x = variable[regList[i][1]:regList[i+1][0]]
 			theList.append(x)
 	excel = theList[0]
+	#excel = 'C:/Users/jricker/Desktop/original_text.xls'
 	listToProcess = theList[1:]
+	if listToProcess[0] == 'Replace With':
+		worksheet_name = 'Replace'
+	else:
+		worksheet_name = 'Text'
 	for i in listToProcess:
-		Kk.readExcel(str(i), excel)
+		Kk.readExcel(str(i), excel, worksheet_name)
 ##################################
 ### DOUBLE CHECK THE ORIGINAL DATA FIRST TO SEE IF ANYTHING HAS CHANGED IN THE EXCEL DOCUMENT, IF IT HAS CHANGE IT IN THE AE PROJECT
 ##################################

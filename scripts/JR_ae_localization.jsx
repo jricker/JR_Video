@@ -295,7 +295,12 @@ function tcd_buildUI(thisObj) {
             goGrp: Group { \
                 orientation: 'row', \
                 alignment: ['fill','top'], \
-                goBtn: Button {text:' Create ', alignment:['left','top']}, \
+                goBtn: Button {text:' Localize Text ', alignment:['left','top']}, \
+            } \
+            replaceGrp: Group { \
+                orientation: 'row', \
+                alignment: ['fill','top'], \
+                replaceBtn: Button {text:' Replace Text ', alignment:['left','top']}, \
             } \
         }";
         // VARIABLES
@@ -480,6 +485,25 @@ function tcd_buildUI(thisObj) {
             var fileName = myFile.fsName;
             myPal.grp.btnGrp.fileTxt.text = fileName;
             //alert(fileOK.type)
+        }
+        myPal.grp.replaceGrp.replaceBtn.onClick = function() {
+            //var excelVarList = 'Replace'
+            //excelVarList = [myPal.grp.btnGrp.fileTxt.text + ",Replace With"]
+            excelDocuent = myPal.grp.btnGrp.fileTxt.text
+            regionsToConvert.unshift(excelDocuent)
+            regionsToConvert.push('Replace With')
+            //excelDocuent = myPal.grp.btnGrp.fileTxt.text
+            //regionsToConvert.unshift(excelDocuent)
+            var excelVarList = ''
+            var regionsToConvertLength = regionsToConvert.length
+            for (var x in regionsToConvert){
+                excelVarList+=regionsToConvert[x]
+                if (x < regionsToConvertLength-1){
+                    excelVarList+= ","
+                }
+            }
+            system.callSystem(userHomeFolder+"\\Documents\\GitHub\\JR_Video\\scripts\\JR_AE_Replace.bat " + excelVarList)
+            replaceText()
         }
         // Duplicate Selected
         myPal.grp.goGrp.goBtn.onClick = function() {
