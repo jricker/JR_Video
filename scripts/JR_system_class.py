@@ -26,6 +26,8 @@ class System(Rename):
         # CACHE ITEMS
         self.BRC = ''
         ## SETTINGS
+        self.movie_ext = ('.mov', '.R3D', '.MXF', '.mp4', '.MP4' , '.avi')
+        self.image_ext = ('.jpg','.tiff','.png', '.tga', '.exr')
         # VDUB COMPRESSION
         self.compression = (
             self.settings + '\\vDub_compression\\vDub_avi_compression.vcf', 
@@ -62,7 +64,10 @@ class System(Rename):
         X = []
         for dirpath,dirnames,filenames in os.walk(dirPath):
             for file in filenames:
-                if name in file:
+                if name == '':
+                    if file.endswith(self.image_ext):
+                        X.append(dirpath)
+                elif name.lower() in file.lower():
                     X.append(dirpath)
         return X
         #Y = set(X)

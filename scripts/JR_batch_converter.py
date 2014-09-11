@@ -7,7 +7,7 @@ from JR_ui_class import UI
 class batchConvert(Convert, UI):
     def __init__ (self):
         Convert.__init__(self)
-        UI.__init__(self)
+        #UI.__init__(self)
         #System.__init__(self)
         self.sourceDirectory = ""
         self.destDirectory = ""
@@ -25,7 +25,8 @@ class batchConvert(Convert, UI):
     #            if 'Screenshot' in file:
     #            	self.screenshotDirectory.append(dirpath)
     def findScreenshots(self, directory):
-        self.screenshotDirectory= self.getFileList(directory, 'Screenshot')
+        name_to_search = 'Screenshot'
+        self.screenshotDirectory= self.getFileList(directory, name_to_search)
     	X = set(self.screenshotDirectory)
         return sorted(X)
     def findMovies (self, dirPath,uniq=True,sorted=True):
@@ -72,7 +73,7 @@ class batchConvert(Convert, UI):
                 firstImage = ''
                 for dirpath,dirnames,filename in os.walk(i):
                     for file in filename:
-                        if 'Screenshot' in file:
+                        if 'screenshot' in file.lower():
                             firstImage = file
                             break
                     item = i+'\\'+firstImage
@@ -91,9 +92,10 @@ class batchConvert(Convert, UI):
 ####
 ####
 if __name__ == '__main__':
-    H264  = 'C:\\Users\\James\\Desktop\\H264 Folder'
+    #H264  = 'C:\\Users\\James\\Desktop\\H264 Folder'
+    SS = 'C:\\Users\\jricker\\Desktop\\test'
     batch = batchConvert()
-    batch.batc
+    batch.batch_SS2MOV(SS)
     #batch.batch_SS2MOV(directory='C:\\Users\\James\\Desktop\\SHOTS')
     #batch.batch_moveH264(H264)
     #batch.findH264(batch.destDirectory)

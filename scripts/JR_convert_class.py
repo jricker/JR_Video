@@ -1,22 +1,28 @@
+# -*- coding: utf-8 -*-
 from JR_project_class import Project
 from JR_system_class import System
-#import binascii, re
+from JR_ui_class import UI
 import codecs
 import shutil
 import sys
 import os
-class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF THE CONVERSION SCRIPTS
+class Convert(System, Project, UI): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF THE CONVERSION SCRIPTS
 	def __init__(self):
-		# System is already initialized in the Projects class 
+		# System is already initialized in the Projects class
+		#UI.__init__(self)
 		Project.__init__(self)
 	def regWriter(self):
 		template_reg = self.settings + '\\registry\\default_reg.reg'
 		user_reg = self.settings + '\\registry\\custom_reg.reg'
-		user_reg_data = codecs.open(template_reg) # type of data it needs "C:\\Users\\James\\Desktop\\test.reg"
+		user_reg_data = codecs.open(template_reg, encoding = "utf-16") # type of data it needs "C:\\Users\\James\\Desktop\\test.reg"
 		user_reg_lines = user_reg_data.readlines()
+		#print user_reg_lines
 		new_list = []
 		for i in user_reg_lines:
+			#print i.strip()
+			#x = i.strip()
 			x = i.strip()
+			#print x
 			if 'USERNAME' in x:
 				new_line = x.replace('USERNAME', self.userName[9:])
 			else:
@@ -29,6 +35,45 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 		    	print>>file, (i)
 		os.system('"''start '+user_reg+'"')
 		# find a way to delete the created custom_reg file after it's used?
+	def text2regHex(self, input_data):
+		text_as_hex = input_data.encode('hex')
+		digit_counter = 0
+		hex_list = []
+		for i in range(len(text_as_hex)/2 ): # JUMPING TWO SPOTS, ADDING 00 AND , TO EACH
+			if digit_counter > len(text_as_hex)-2 or digit_counter == len(text_as_hex):
+				pass
+			else:
+				o = text_as_hex[digit_counter] + text_as_hex[digit_counter+1] +','+'00' + ','
+			hex_list.append(o)
+			digit_counter +=2
+		regHexJoin = [''.join(x for x in hex_list)]
+		REGHEX_from_txt = regHexJoin[0][:-1]
+		return REGHEX_from_txt
+	def regHex2text(self, input_data):
+		if input_data.endswith('.reg'):
+			reg_data = codecs.open(input_data, encoding="utf_16") # type of data it needs "C:\\Users\\James\\Desktop\\test.reg"
+			reg_lines = reg_data.readlines()
+			reg_list = []
+			for i in range(len(reg_lines)):
+				if ':' in reg_lines[i]:
+					reg_list.append(i)
+			reghex_read = reg_lines[reg_list[0]:]
+			reghex_join = [''.join(x for x in reghex_read)]
+			reghex = reghex_join[0] # the end just removes the @=hex(2) which needs to be put pack in later when writing to a .reg file
+		else:
+			reghex = input_data
+		remove_comma = reghex.replace(',', '')
+		remove_backspace = remove_comma.replace('\\', '')#.decode('hex')
+		reghex_decoded = remove_backspace.replace('  ', '').decode('hex')
+		regList = []
+		for i in reghex_decoded:
+			if i == '\x00':
+				pass
+			else:
+				regList.append(i)
+		reghex_clean = [''.join(x for x in regList)]
+		text_from_hex = reghex_clean[0]
+		return text_from_hex	
 	def processMetadata(self, input_data):
 		metadata = {'FPS':0, 'Width':0, 'Height':0}
 		if input_data.endswith('.R3D'):
@@ -56,11 +101,11 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 		meta_file.close() # close the file now so we can remove it
 		os.remove(output_metadata)
 		return metadata
-	def img2mov(self, input_data = 'NA', metadata = 'NA', output_format = 'ProRes', size = '1920x1080'):
-		if output_format == 'ProRes':
-			output_ext = '.mov'
-		elif output_format == 'H264':
-			output_ext = '.mp4'
+	def img2mov(self, input_data = 'NA', metadata = 'NA', format = 'ProRes', size = '1920x1080', compression = 'ProRes422_HQ'):
+		#if format == 'ProRes':
+		#	output_ext = '.mov'
+		#elif format == 'H264':
+		#	output_ext = '.mp4'
 		##############################################################################################################################################
 		compression_01 = self.compression[1] # use the original compression file which is 01 for it's data
 		compression_02 = self.compression[1][:-6]+'02.vcf' # then write out to compression file 02 each line but with the updated FPS
@@ -91,17 +136,19 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 				WxH = '1920x1080'
 			resizeWxH = '"'+'640 360'+'"' # we resize the width and hight for the initial TIF export so it isn't so massive. Start off with 640x360 as a base
 			if 1919 < metadata['Width'] < 2048:
-				resizeWxH = '"'+ str(int(metadata['Width'])/3)+' '+str(int(metadata['Height'])/3) + '"'
+				resizeWxH = '"'+ str(int(metadata['Width'])/2)+' '+str(int(metadata['Height'])/2) + '"'
 			if 2047 < metadata['Width'] < 4096:
-				resizeWxH = '"'+ str(int(metadata['Width'])/4)+' '+str(int(metadata['Height'])/4) + '"'
+				resizeWxH = '"'+ str(int(metadata['Width'])/2)+' '+str(int(metadata['Height'])/2) + '"'
 			if 4096 < metadata['Width']:
-				resizeWxH = '"'+ str(int(metadata['Width'])/8)+' '+str(int(metadata['Height'])/8) + '"'
+				resizeWxH = '"'+ str(int(metadata['Width'])/2)+' '+str(int(metadata['Height'])/2) + '"'
 		##############################################################################################################################################
-		QT_final_name = self.processFinalName(input_data)+output_ext #for renaming the QT without the iterations or seperators
+		#QT_final_name = self.processFinalName(input_data)+output_ext #for renaming the QT without the iterations or seperators
 		processed = self.processInput(input_data) #grab the name ouputs from the rename class
 		output_data = processed[2]+processed[3]
-		parent_name = processed[2]+processed[3]
+		parent_name = processed[2]+self.processFinalName(input_data)
+		#!!parent_name = processed[2]+processed[3]
 		iteration_length = processed[1]
+		print iteration_length
 		##############################################################################################################################################
 		## See if the RENDER folder is there, if not, then take the folder the data is coming from ###################################################
 		try:
@@ -128,20 +175,24 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 			##############################################################################################################################################
 			## ONCE COMPLETED THEN CREATE MOV FROM IMGS ##################################################################################################
 			batch_cmd = "IMG2MOV"
-			action = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+JPG_output+'_temp_0000.jpg'+'"' + ' ' + compression_02 + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH + ' ' + self.djv + ' ' + '"'+output_data+iteration+processed[0]+'"' + ' ' + JPG_output )
+			#!!action = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+JPG_output+'_temp_0000.jpg'+'"' + ' ' + compression_02 + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH + ' ' + self.djv + ' ' + '"'+output_data+iteration+processed[0]+'"' + ' ' + JPG_output )
+			action = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+JPG_output+'_temp_0000.jpg'+'"' + ' ' + self.compression[0] + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH+ ' ' + format + ' ' + str(self.prores[compression]))
 			os.system(action)
+			#os.rename(parent_name+output_ext, QT_final_name)
 		else:
 			WxH = size
 			batch_cmd = "IMG2MOV"
-			if output_format == 'ProRes':
-				setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + self.compression[0] + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH+ ' ' + output_format)
+			if format == 'ProRes':
+				setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + self.compression[0] + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH+ ' ' + format + ' ' + str(self.prores[compression]))
 				os.system(setup)
-			elif output_format == 'H264':
-				setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + self.compression[0] + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH+ ' ' + output_format)
+			elif format == 'H264':
+				setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + self.compression[0] + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' +  WxH+ ' ' + format + ' ' + str(self.prores[compression]))
 				os.system(setup)
+			os.remove(parent_name+'.avi')
 			#setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' +  '"'+input_data+'"' + ' ' + compression_02 + ' ' + self.vdub + ' ' + self.ffmpeg + ' ' + '"'+parent_name+'"' + ' ' + self.vlc)
 		# \/ reinstate this at the end to rename once everything is working properly again
-		os.rename(parent_name+output_ext, parent_folder+QT_final_name) # rename the file after all is set and done. 
+		#os.rename(parent_name+output_ext, parent_folder+QT_final_name) # rename the file after all is set and done. 
+			#os.rename(parent_name+output_ext, QT_final_name) # rename the file after all is set and done. 
 		##############################################################################################################################################
 		##############################################################################################################################################
 		if os.path.exists(JPG_folder):
@@ -154,29 +205,33 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 			setup2 = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' + '"'+movFolder+'"') # This opens the MOV folder after creation, but have to control if batch converting multiple shots
 			os.system(setup2)
 			#os.system('"''start '+parent_folder+'\\01_MOV'+'"') # have to make a fix for this if it doesn't export to an MOV folder and just does it to the recent directory
-	def mov2prores(self, input_data = '', output_data = ''):
+	def mov2prores(self, input_data = '', output_data = '', output_format = 'ProRes422_HQ'):
 		batch_cmd = 'PRORES'
 		if output_data == '':
 			output_data = input_data[:[i for i, letter in enumerate(input_data) if letter == '.'][-1] ]+'_prores.mov'
-		action = (self.scripts + "\\JR_convert.bat "+ batch_cmd+ ' ' +self.ffmpeg+ ' ' +'"'+input_data+'"'+ ' ' +output_data + ' ' + str(self.prores['ProRes422_HQ']) )
-		os.system(action)
+		if self.processInput(input_data)[0] == '.R3D': # Need a special process for .R3D files because FFMPEG can't process them. Have to use redline initially.
+			self.red2mov(input_data, 'PRORES')
+		else:
+			action = (self.scripts + "\\JR_convert.bat "+ batch_cmd+ ' ' +self.ffmpeg+ ' ' +'"'+input_data+'"'+ ' ' +output_data + ' ' + str(self.prores[output_format]) )
+			os.system(action)
 	def mov2H264(self, input_data):
 		batch_cmd = 'H264'
 		if self.processInput(input_data)[0] == '.R3D': # Need a special process for .R3D files because FFMPEG can't process them. Have to use redline initially.
-			self.red2H264(input_data)
+			self.red2mov(input_data, 'H264')
 		else:
 			processed = self.processInput(input_data)
 			output_file = '"' + processed[2]+processed[3] +'_H264.mp4'+ '"' # THE [1:] is to get rid of the \\ that exists on the filename, this may cause issues on the end
 			input_file = '"' + processed[2]+processed[3] +processed[0]+ '"' # THE [1:] is to get rid of the \\ that exists on the filename, this may cause issues on the end
 			action = (self.scripts + "\\JR_convert.bat "+ batch_cmd+ ' ' +self.ffmpeg+ ' ' +input_file+ ' ' + output_file )
 			os.system(action)
-	def red2H264(self, input_data):
+	def red2mov(self, input_data ='', format = ''):
 		batch_cmd = 'REDH264'
 		## process metadata
 		metadata = self.processMetadata(input_data)
 		# finish metadata processing
-		output_data = input_data[:[i for i, letter in enumerate(input_data) if letter == '.'][-1] ]
+		#output_folder = input_data[:[i for i, letter in enumerate(input_data) if letter == '.'][-1] ]
 		processed = self.processInput(input_data)
+		output_folder = processed[2]
 		##############################################################################################################################################
 		##############################################################################################################################################
 		## Create temp TIFF folder
@@ -185,28 +240,31 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 			os.makedirs(TIFF_folder)
 		##############################################################################################################################################
 		##############################################################################################################################################
-		output_name = output_data[[i for i, letter in enumerate(output_data) if letter == '/'][-1]+1:]
-		output_data = output_data[:[i for i, letter in enumerate(output_data) if letter == '/'][-1]+1]
-		output_tiff = TIFF_folder+output_name+'.000000.tif'
+		output_name = processed[3]
+		output_tiff = TIFF_folder+output_name+'.000000.tif' # THIS IS THE ouput REdCine creates. Thus we have to have 6 zeros at the end
 		output_mov = TIFF_folder+output_name+'.mov'
-		move_mov_to = output_data+output_name+'.mov'
+		move_mov_to = output_folder+output_name+'.mov'
 		##############################################################################################################################################
 		##############################################################################################################################################
 		action = (self.scripts + "\\JR_convert.bat "+ batch_cmd+ ' ' +self.redline+ ' ' +input_data+ ' ' + TIFF_folder + ' ' + output_name + ' ' + output_tiff )
 		os.system(action) # convert R3D files to TIFF sequence
 		##############################################################################################################################################
 		##############################################################################################################################################
-		self.img2mov(output_tiff, metadata) # Send the new tiff files to be turned into a movie
+		if format == 'PRORES':
+			self.img2mov(input_data= output_tiff, metadata= metadata, compression = self.BRC) # Send the new tiff files to be turned into a movie
+		else:
+			self.img2mov(output_tiff, metadata)
 		shutil.move(output_mov, move_mov_to) # move the newly created MOV file out of the temp TIFF folder
 		shutil.rmtree(TIFF_folder) #remove the temp tiff folder after it's done compressing into prores mov
 		##############################################################################################################################################
 		##############################################################################################################################################
 		#NOW CONVERT TO H264
-		self.mov2H264(move_mov_to)
+		if format == 'H264':
+			self.mov2H264(move_mov_to)
+			#NOW DELETE ORIGINAL PRORES FILE
+			os.remove(move_mov_to)
 		##############################################################################################################################################
 		##############################################################################################################################################
-		#NOW DELETE ORIGINAL PRORES FILE
-		os.remove(move_mov_to)
 	def edl2mov(self, input_data):
 		batch_cmd = "MOV2CUTDOWN"
 		EDL = []
@@ -299,58 +357,44 @@ class Convert(System, Project): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF TH
 		new_output =  new_folder + output_data[[i for i, letter in enumerate(input_data) if letter == '\\'][-1] : ]+format
 		setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' + self.djv + ' ' +  '"'+output_data+iteration+'.exr'+'"' + ' ' + '"'+new_output+'"'+ ' '+ '"'+size+'"')
 		os.system(setup)
-	def regHex2text(self, input_data):
-		if input_data.endswith('.reg'):
-			reg_data = codecs.open(input_data, encoding="utf_16") # type of data it needs "C:\\Users\\James\\Desktop\\test.reg"
-			reg_lines = reg_data.readlines()
-			reg_list = []
-			for i in range(len(reg_lines)):
-				if ':' in reg_lines[i]:
-					reg_list.append(i)
-			reghex_read = reg_lines[reg_list[0]:]
-			reghex_join = [''.join(x for x in reghex_read)]
-			reghex = reghex_join[0] # the end just removes the @=hex(2) which needs to be put pack in later when writing to a .reg file
-		else:
-			reghex = input_data
-		remove_comma = reghex.replace(',', '')
-		remove_backspace = remove_comma.replace('\\', '')#.decode('hex')
-		reghex_decoded = remove_backspace.replace('  ', '').decode('hex')
-		regList = []
-		for i in reghex_decoded:
-			if i == '\x00':
-				pass
-			else:
-				regList.append(i)
-		reghex_clean = [''.join(x for x in regList)]
-		text_from_hex = reghex_clean[0]
-		return text_from_hex	
-	def text2regHex(self, input_data):
-		text_as_hex = input_data.encode('hex')
-		digit_counter = 0
-		hex_list = []
-		for i in range(len(text_as_hex)/2 ): # JUMPING TWO SPOTS, ADDING 00 AND , TO EACH
-			if digit_counter > len(text_as_hex)-2 or digit_counter == len(text_as_hex):
-				pass
-			else:
-				o = text_as_hex[digit_counter] + text_as_hex[digit_counter+1] +','+'00' + ','
-			hex_list.append(o)
-			digit_counter +=2
-		regHexJoin = [''.join(x for x in hex_list)]
-		REGHEX_from_txt = regHexJoin[0][:-1]
-		return REGHEX_from_txt
 if __name__ == '__main__':
 	conversion = Convert()
+	#a = 'D:/EXAMPLE_PROJECT/Live_Action_Footage'
+	#a = 'MOV2H264'
+	#a = 'MOV2PRORES'
+	#b = 'D:/EXAMPLE_PROJECT/Live_Action_Footage/A003_C001_0827T1_001.R3D'
+	#if a == 'MOV2H264':
+	#	conversion.mov2H264(input_data = b)
+	#elif a == 'MOV2PRORES':
+	#	conversion.mov2prores(input_data=b)
 	#conversion.mov2prores('D:/A007C052_140704UX.MXF', 'D:/A007C052_140704UX.mov')
+	#a = 'D:/EXAMPLE_PROJECT/Frostbite_Renders/OMAHA_TT_sc01_sh011/OMAHA_TT_sc01_sh011_0000.tga'
+	#b = 'IMG2MOV'
+	#conversion.CreateButtons(input_data={'ProRes':'self.returnItem("ProRes")', 'H264':'self.returnItem("H264")'} )
+	#if conversion.BRC != '':
+	#	conversion.img2mov(a, format = conversion.BRC)
 	if sys.argv[2] == 'IMG2MOV':
-		conversion.img2mov(sys.argv[1])
+		conversion.CreateButtons(input_data={'ProRes':'self.returnItem("ProRes")', 'H264':'self.returnItem("H264")'} )
+		if conversion.BRC != '':
+			conversion.img2mov(sys.argv[1], format = conversion.BRC)
 	elif sys.argv[2] == 'RENAME':
 		conversion.rename( sys.argv[1])
 	elif sys.argv[2] == 'PRORES':
-		conversion.mov2prores(sys.argv[1])
+		conversion.CreateButtons(
+    		input_data={
+    	    '422_Proxy':'self.returnItem("ProRes422_Proxy")', 
+    	    '422_LT':'self.returnItem("ProRes422_LT")', 
+    	    '422_Normal':'self.returnItem("ProRes422_Normal")', 
+    	    '422_HQ':'self.returnItem("ProRes422_HQ")'
+    	    } 
+    	    )
+		conversion.mov2prores(sys.argv[1], output_format=conversion.BRC)
 	elif sys.argv[2] == 'EXR2IMG':
 		conversion.exr2img(input_data = sys.argv[1])
 	elif sys.argv[2] == 'MOV2CUTDOWN':
 		pass
+	elif sys.argv[2] == 'MOV2H264':
+		conversion.mov2H264(input_data = sys.argv[1])
 	elif sys.argv[2] == 'EDL2MOV':
 		conversion.edl2mov(sys.argv[1])
 	else:

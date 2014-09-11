@@ -8,7 +8,10 @@ class Rename():
 	def processInput(self, input_data):
 		self.selection = [input_data]
 		extension = input_data[[i for i, letter in enumerate(input_data) if letter == '.'][-1]:]
-		iteratorValue = input_data[self.getIteratorLocation(0)[-1][0]:self.getIteratorLocation(0)[-1][1]]
+		try: # was having an issue passing data that didn't have an iterator value. Added this code to handle any expections. Might want to clean up later
+			iteratorValue = input_data[self.getIteratorLocation(0)[-1][0]:self.getIteratorLocation(0)[-1][1]]
+		except IndexError:
+			iteratorValue = 0
 		filepath = input_data[:[i for i, letter in enumerate(input_data) if letter == '/' or letter == '\\'][-1]+1 ]
 		filename = input_data[[i for i, letter in enumerate(input_data) if letter == '/' or letter == '\\'][-1]+1 : -len(extension) ]
 		return extension, iteratorValue, filepath, filename

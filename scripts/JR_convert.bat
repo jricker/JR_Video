@@ -23,7 +23,7 @@ goto END
 goto END
 ::
 :REDH264
-"%~2" --i %3 --outDir "%~4" -o "%~5" -w 1 -R 8 --colorSciVersion 1 --gpuPlatform 0
+"%~2" --i %3 --outDir "%~4" -o "%~5" -w 1 -R 2 --colorSciVersion 1 --gpuPlatform 0
 :: The --colorSciVersion is for the Mysterium X or later sensor which doens't corectly translate colors unless this is turned on. 
 goto END
 ::
@@ -40,18 +40,15 @@ echo Ok, done
 if %~8 == H264 goto convertH264
 if %~8 == ProRes goto convertProRes
 :convertProRes
-::%5 -i "%~6.avi" -y -vcodec libx264 -s "1920x1080" -b:v 5000k -codec:a libvo_aacenc "%~6.mov"
 %5 -i "%~6.avi" -y -vcodec prores -profile:v 0 -s %7 -bits_per_mb 8000 %6.mov
-del "%~6.avi"
+::del "%~6.avi"
 goto END
 ::
 :convertH264
 %5 -i "%~6.avi" -y -vcodec libx264 -b:v 5000k -s %7 -codec:a libvo_aacenc %6.mp4
-::%5 -i "%~6.avi" -y -vcodec prores -profile:v 0 -s hd1080 -bits_per_mb 8000 %6.mov
-del "%~6.avi"
-::touch -m "%~6.mov"
-::%7 %6.mov
+::del "%~6.avi"
 goto END
+::
 ::
 :EXR2IMG
 ::%8 "%~6-10000.exr" "%6_temp.jpg" -resize 1280 720

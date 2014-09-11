@@ -1,80 +1,125 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_CLASSES_ROOT\.edl]
-@="EDLfile"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\DesktopBackground\shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_CreateAsset;"
 
-[HKEY_CLASSES_ROOT\EDLfile]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_CreateAsset]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Create Asset"
 
-[HKEY_CLASSES_ROOT\EDLfile\shell]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_CreateAsset\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,52,00,45,00,4e,00,41,00,4d,00,45,00,22,00
 
-[HKEY_CLASSES_ROOT\EDLfile\shell\create mov]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_BatchConvert_SS2MOV;00_Mediaworks_BatchConvert_MOV2H264"
 
-[HKEY_CLASSES_ROOT\EDLfile\shell\create mov\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,45,00,44,00,4c,00,32,00,4d,00,4f,00,56,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_BatchConvert_SS2MOV]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Batch - Screen > MOV"
 
-[HKEY_CLASSES_ROOT\Directory\Background\shell\Cinematic UI]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_BatchConvert_SS2MOV\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,62,00,61,00,74,00,63,00,68,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,53,00,53,00,32,00,4d,00,4f,00,56,00,22,00
 
-[HKEY_CLASSES_ROOT\Directory\Background\shell\Cinematic UI\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,75,00,69,00,5f,00,6d,00,61,00,69,00,6e,00,2e,00,70,00,79,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_BatchConvert_MOV2H264]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Batch - Media > H264"
 
-[HKEY_CLASSES_ROOT\jpegfile\shell\rename file]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_BatchConvert_MOV2H264\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,62,00,61,00,74,00,63,00,68,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,4d,00,4f,00,56,00,32,00,48,00,32,00,36,00,34,00,22,00
 
-[HKEY_CLASSES_ROOT\jpegfile\shell\rename file\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,52,00,45,00,4e,00,41,00,4d,00,45,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_Rename]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Rename"
+"SubCommands"="00_Mediaworks_RenameAuto;00_Mediaworks_RenameUI"
 
-[HKEY_CLASSES_ROOT\jpegfile\shell\create mov]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_RenameAuto]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Auto"
 
-[HKEY_CLASSES_ROOT\jpegfile\shell\create mov\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,49,00,4d,00,47,00,32,00,4d,00,4f,00,56,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_RenameAuto\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,52,00,45,00,4e,00,41,00,4d,00,45,00,22,00
 
-[HKEY_CLASSES_ROOT\Photoshop.TGAFile.60\shell\rename file]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_RenameUI]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Custom"
 
-[HKEY_CLASSES_ROOT\Photoshop.TGAFile.60\shell\rename file\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,52,00,45,00,4e,00,41,00,4d,00,45,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_RenameUI\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,52,00,45,00,4e,00,41,00,4d,00,45,00,22,00
 
-[HKEY_CLASSES_ROOT\Photoshop.TGAFile.60\shell\create mov]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_Img2Mov]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="IMG > MOV"
 
-[HKEY_CLASSES_ROOT\Photoshop.TGAFile.60\shell\create mov\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,49,00,4d,00,47,00,32,00,4d,00,4f,00,56,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_Img2Mov\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,49,00,4d,00,47,00,32,00,4d,00,4f,00,56,00,22,00
 
-[HKEY_CLASSES_ROOT\Photoshop.TIFFFile.60\shell\rename file]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_Mov2H264]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Media > H264"
 
-[HKEY_CLASSES_ROOT\Photoshop.TIFFFile.60\shell\rename file\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,52,00,45,00,4e,00,41,00,4d,00,45,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_Mov2H264\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,4d,00,4f,00,56,00,32,00,48,00,32,00,36,00,34,00,22,00
 
-[HKEY_CLASSES_ROOT\Photoshop.TIFFFile.60\shell\create mov]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_Mov2ProRes]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Media > ProRes"
 
-[HKEY_CLASSES_ROOT\Photoshop.TIFFFile.60\shell\create mov\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,49,00,4d,00,47,00,32,00,4d,00,4f,00,56,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_Mov2ProRes\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,50,00,52,00,4f,00,52,00,45,00,53,00,22,00
 
-[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\create mov]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_PremierUpres]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Online Project"
 
-[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\create mov\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,49,00,4d,00,47,00,32,00,4d,00,4f,00,56,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_PremierUpres\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,75,00,70,00,72,00,65,00,73,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00
 
-[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\rename file]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.png\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Rename; 00_Mediaworks_Img2Mov;"
 
-[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\rename file\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,52,00,45,00,4e,00,41,00,4d,00,45,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.exr\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Rename; 00_Mediaworks_Img2Mov;"
 
-[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\convert to img]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpg\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Rename; 00_Mediaworks_Img2Mov;"
 
-[HKEY_CLASSES_ROOT\Photoshop.OpenEXRFile.60\shell\convert to img\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,45,00,58,00,52,00,32,00,49,00,4d,00,47,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.tiff\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Rename; 00_Mediaworks_Img2Mov;"
 
-[HKEY_CLASSES_ROOT\VLC.avi\shell\convert to prores]
-"Icon"="C:\\Users\\jricker\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\images\\UI\\icon.ico"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.tif\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Rename; 00_Mediaworks_Img2Mov;"
 
-[HKEY_CLASSES_ROOT\VLC.avi\shell\convert to prores\command]
-@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,43,00,6f,00,70,00,79,00,5c,00,47,00,48,00,4f,00,53,00,54,00,5c,00,43,00,49,00,4e,00,45,00,4d,00,41,00,54,00,49,00,43,00,5f,00,53,00,43,00,52,00,49,00,50,00,54,00,53,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,50,00,52,00,4f,00,52,00,45,00,53,00,22,00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.tga\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Rename; 00_Mediaworks_Img2Mov;"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.prproj\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_PremierUpres;"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.mov\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Mov2H264; 00_Mediaworks_Mov2ProRes;00_Mediaworks_Rename;"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.mp4\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Mov2H264; 00_Mediaworks_Mov2ProRes;00_Mediaworks_Rename;"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.MXF\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Mov2H264; 00_Mediaworks_Mov2ProRes;00_Mediaworks_Rename;"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.R3D\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Mov2H264; 00_Mediaworks_Mov2ProRes;00_Mediaworks_Rename;"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.avi\Shell\EA_Mediaworks]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"SubCommands"="00_Mediaworks_Mov2H264; 00_Mediaworks_Mov2ProRes;00_Mediaworks_Rename;"

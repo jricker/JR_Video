@@ -4,6 +4,114 @@
 		"selected_items":
 		[
 			[
+				"final",
+				"final_movie	(local, instance)"
+			],
+			[
+				"move",
+				"move_to	(local, instance)"
+			],
+			[
+				"proces",
+				"processFinalName(input_data)	(attribute, function)"
+			],
+			[
+				"proce",
+				"processFinalName(input_data)	(attribute, function)"
+			],
+			[
+				"created",
+				"created_movie	(local, instance)"
+			],
+			[
+				"paren",
+				"parent_name	(local, instance)"
+			],
+			[
+				"create",
+				"created_movie	(local, instance)"
+			],
+			[
+				"pare",
+				"parent_name	(local, instance)"
+			],
+			[
+				"movie",
+				"movie_extensions	(local, instance)"
+			],
+			[
+				"MOV2",
+				"MOV2PRORES"
+			],
+			[
+				"P",
+				"422_Proxy"
+			],
+			[
+				"oup",
+				"output_format"
+			],
+			[
+				"input",
+				"input_data=	(parameter_keyword, instance)"
+			],
+			[
+				"outpu",
+				"output_format"
+			],
+			[
+				"outp",
+				"output_format	(local, instance)"
+			],
+			[
+				"H",
+				"H264"
+			],
+			[
+				"QT",
+				"QT_final_name	(local, instance)"
+			],
+			[
+				"iterat",
+				"iteration_length	(local, instance)"
+			],
+			[
+				"output",
+				"output_name	(local, instance)"
+			],
+			[
+				"out",
+				"output_mov	(local, instance)"
+			],
+			[
+				"image",
+				"image_extensions	(local, instance)"
+			],
+			[
+				"b",
+				"b	(global, instance)"
+			],
+			[
+				"user_reg",
+				"user_reg_lines	(local, instance)"
+			],
+			[
+				"reg",
+				"regWriter()	(attribute, function)"
+			],
+			[
+				"in",
+				"input_data=	(parameter_keyword, instance)"
+			],
+			[
+				"batch",
+				"batch_convert2H264()	(attribute, function)"
+			],
+			[
+				"ProRes",
+				"ProRes422_HQ"
+			],
+			[
 				"region",
 				"region	(local, instance)"
 			],
@@ -110,10 +218,6 @@
 			[
 				"HQ",
 				"HQ_list	(global, instance)"
-			],
-			[
-				"input",
-				"input_file"
 			],
 			[
 				"rela",
@@ -396,9 +500,43 @@
 	},
 	"file_history":
 	[
+		"/C/Users/jricker/Documents/GitHub/JR_Video/settings/registry/custom_reg.reg",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/regConverter_temp.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/settings/registry/default_reg.reg",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ui_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_rename_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_system_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_batch_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert.bat",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_shotgun_test.py",
+		"/C/Users/jricker/Documents/GitHub/JR_test.py",
+		"/C/Users/jricker/Desktop/EXAMPLE/Edit/JAPAN_EDIT.prproj",
+		"/C/Users/jricker/Desktop/EXAMPLE/Edit/GOTY_EDIT.prproj",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_batch_converter.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ae_excel_reader.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ae_localization.jsx",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/settings/registry/default_reg_old.reg",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_AE_Generate.bat",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_upres_class.py",
+		"/C/Users/jricker/Desktop/Background.reg",
+		"/C/Users/jricker/Desktop/pppppp.reg",
+		"/C/Users/jricker/Desktop/dddawee.reg",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_project_class.py",
+		"/C/Users/jricker/Desktop/ddaasdf.reg",
+		"/C/Users/jricker/Desktop/aa.reg",
+		"/C/Users/jricker/Desktop/local.reg",
+		"/C/Users/jricker/Desktop/00_JAMES.reg",
+		"/C/Users/jricker/Desktop/ppopo.reg",
+		"/C/Users/jricker/Desktop/subfolderLocations.reg",
+		"/C/Users/jricker/Desktop/b.reg",
+		"/C/Users/jricker/Desktop/test/t.reg",
+		"/C/Users/jricker/Downloads/Menus_Open_To_Right.reg",
+		"/C/Users/jricker/Desktop/exr.reg",
+		"/C/Users/jricker/Desktop/jpg.reg",
+		"/C/Users/jricker/Desktop/tga.reg",
+		"/C/Users/jricker/Desktop/folder.reg",
+		"/C/Users/jricker/Desktop/t.reg",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ae_localization.jsx",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_AE_Replace.bat",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ae_generate.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_material_class.py",
@@ -421,13 +559,10 @@
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_playblast_tool.py",
 		"/C/Users/jricker/Documents/maya/2014-x64/presets/renderGlobalsPreset_FinalFrameEXR.mel",
 		"/C/Users/jricker/Copy/Mediaworks/EA_database.py",
-		"/C/Users/jricker/Documents/GitHub/JR_shotgun_test.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/WIP_UI_sceneOpen.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/WIP_shotgun_api3.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/test.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_batch_converter.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_upres_edit.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert_class.py",
 		"/C/Users/jricker/Desktop/ez_setup.py",
 		"/C/Users/jricker/Documents/GitHub/python-api/setup.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/WIP_sg_wrapper.py",
@@ -466,7 +601,6 @@
 		"/D/Resolve Projects/Settings/SYSTEM CONFIG.xml",
 		"/C/Users/jricker/Desktop/XBOX/XBOX Controller.py",
 		"/D/projects/genesis-dl-prod/Data/Source/FBScripts/startup.dbx",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ui_class.py",
 		"/C/Users/jricker/Desktop/data2.txt",
 		"/C/Users/jricker/Desktop/data.txt",
 		"/C/Users/jricker/Documents/Mediaworks/JR_system_class.py",
@@ -484,7 +618,6 @@
 		"/C/Users/jricker/Copy/PYTHON/MAYA/2013_11_29/JR_skratch.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_substance_builder.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_asset_builder.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_system_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/test_batch.bat",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/test2.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/test_page.py",
@@ -493,37 +626,8 @@
 		"/C/Users/jricker/Copy/SCRIPTS/AE/JR_text_test.jsx",
 		"/C/Users/jricker/Copy/SCRIPTS/AE/JR_text_test_03.jsx",
 		"/C/Users/jricker/Copy/SCRIPTS/AE/JR_text_test_05.jsx",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert.bat",
 		"/C/Users/jricker/Desktop/GATEBIL_EDIT_HIGHRES01.edl",
-		"/D/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES01.prproj",
-		"/D/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES.prproj",
-		"/D/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES_01.prproj",
-		"/D/GATEBIL/03_EDITS/02_PREMIER_PROJECT/test_script.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/excel_reader.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_dir_builder.py",
-		"/C/Users/jricker/Desktop/test.py",
-		"/C/Users/jricker/Copy/SCRIPTS/AE/True Comp Duplicator.jsx",
-		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/JR_dir_builder.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ui_xml.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_deploy.py",
-		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/libraries/zip/python_excel/xlrd-0.9.3/setup.py",
-		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/libraries/zip/python_excel/xlrd-0.9.3/scripts/runxlrd.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ui_main.py",
-		"/C/Users/jricker/AppData/Roaming/Sublime Text 2/Packages/User/JSC.sublime-build",
-		"/C/Program Files/Adobe/Adobe After Effects CS6/Support Files/Scripts/ScriptUI Panels/JR_text_test - Shortcut.lnk",
-		"/C/Program Files/Adobe/Adobe After Effects CS6/Support Files/Scripts/ScriptUI Panels/JR_text_test.jsx",
-		"/C/Users/jricker/Desktop/JR_text_test.jsx",
-		"/C/Users/jricker/Desktop/crg_Text_from_File.jsx",
-		"/C/Users/jricker/Downloads/VK_Deflicker.gizmo",
-		"/C/Users/jricker/Downloads/Deflicker_Velocity.gizmo",
-		"/C/Users/jricker/Downloads/getuvshells.py",
-		"/C/Users/jricker/Copy/ASSETS/MODELS/WEAPONS/HANDHELD/knife_ACB90/07_SUBSTANCES/knife_ACB90.sbs",
-		"/C/Users/James/Documents/GitHub/JR_Maya/JR_hk_map.py",
-		"/C/Users/James/Documents/GitHub/JR_Maya/JR_tool_class.py",
-		"/C/Users/James/Documents/GitHub/JR_Maya/JR_hk_cmds.py",
-		"/D/projects/havana/dl/Havana001/havanadata/Raw/Weapons/Handheld/A91/Rig/skeletonOffset.mel",
-		"/D/projects/havana/dl/Havana001/havanadata/Raw/Weapons/Handheld/A91/Rig/controls.mel",
-		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_Maya_Sublime.sublime-project"
+		"/D/GATEBIL/03_EDITS/02_PREMIER_PROJECT/GATEBIL_EDIT_HIGHRES01.prproj"
 	],
 	"find":
 	{
@@ -541,6 +645,98 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\\",
+			"\\\\",
+			"\\",
+			"output_ext",
+			"/2",
+			"input_data",
+			"processed",
+			"resizeWxH",
+			"mov2prores",
+			"\\",
+			"movie_extensions",
+			"movList",
+			"\\",
+			"resizeWxH",
+			"output_codec",
+			"output_format",
+			"format]",
+			"output_format",
+			")/",
+			"mov2prores",
+			"red2H264",
+			"theend",
+			"djv",
+			"self",
+			"exr2img",
+			"EXR2IMG",
+			"exr2img",
+			"djv",
+			"#!!",
+			"iteration",
+			"output_data",
+			"\\",
+			"processFinalName",
+			"shutil",
+			"getFileList",
+			"\\",
+			"endswith",
+			"getIteratorLocation",
+			"H264",
+			"mov2H264",
+			"\"SubCommands\"",
+			"mov2H264",
+			"text2regHex",
+			"regHex2text",
+			"USERNAME",
+			"\"Icon\"",
+			"\\",
+			"user_reg_data",
+			"regWriter",
+			"\\\\",
+			"regWriter",
+			"\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\scripts",
+			"00_Mediaworks_BatchConvert_SS2MOV",
+			"conversion",
+			"Copy\\GHOST\\CINEMATIC_SCRIPTS\\scripts",
+			"finalSet",
+			"BRC",
+			"format",
+			"test2",
+			"self.BRC",
+			"/",
+			"test2",
+			"\\",
+			"self.BRC",
+			"input_data",
+			"CreateButtons",
+			"img2mov",
+			"IMG2MOV",
+			"img2mov",
+			"IMG2MOV",
+			"img2mov",
+			"rename_class",
+			"Rename_Class",
+			"JR_convert_class",
+			"Copy\\\\GHOST\\\\CINEMATIC_SCRIPTS\\\\images\\\\UI\\\\icon.ico",
+			"findMovies",
+			"findScreenshots",
+			"findH264",
+			"mov2prores",
+			"batch_cmd",
+			"red2H264",
+			"mov2H264",
+			"red2H264",
+			"mov2H264",
+			"red2H264",
+			"text2regHex",
+			"\\",
+			"reg",
+			"H264",
+			"if %~1 == H264 goto H264",
+			"Create_HighRes",
+			"H264",
 			"userName",
 			"regionalValue",
 			"writeOut",
@@ -576,99 +772,7 @@
 			"()\\",
 			"from JR_hk_cmds import *;i=Hotkeys();i",
 			"HK.",
-			"Dragger",
-			"Dragger.",
-			"self.category",
-			"setCategory",
-			"Map.",
-			"HUD.",
-			"category",
-			"Attribute",
-			"Dragger",
-			"DraggerTool",
-			"Dragger",
-			"HUD.",
-			"selection.",
-			"Selection.",
-			"selection.",
-			"Selection.",
-			"Selection",
-			"REload",
-			"Attribute.",
-			"Tool.",
-			"Attributes",
-			"Tool.",
-			"Attribute.",
-			"Attribute",
-			"Toggle",
-			"toggle",
-			"Attribute.",
-			"Attributes",
-			"Selection",
-			"Attribute.",
-			"hud",
-			"Attribute",
-			"attribute",
-			"Attribute",
-			"attribute",
-			"Attribute",
-			"Attr",
-			"attr",
-			"UI",
-			"l (",
-			"D.",
-			"Rename",
-			"attr",
-			"cameraS",
-			"cameras",
-			"cameraS",
-			"HUD.",
-			"HUD",
-			"tilde",
-			"`tilde",
-			"`",
-			"	###############################################      `",
-			"attribute",
-			"())",
-			"Dragger(",
-			"(part",
-			"'s",
-			"Dragger",
-			"dragger",
-			"Dragger",
-			"partial",
-			"Dragger",
-			"edge",
-			"edgeTool",
-			"edge",
-			"vertLn",
-			"length",
-			"23",
-			"and_symbol",
-			"colon_symbol",
-			"apost_symbol",
-			"hi",
-			"out",
-			":",
-			">",
-			"<",
-			":",
-			":'",
-			">",
-			"<",
-			";",
-			">",
-			"<",
-			">",
-			"<",
-			"_H264.mp4",
-			">A00",
-			"a00",
-			"A00",
-			"A006C001",
-			"ActualMediaFilePath",
-			"D:\\JAPAN\\02_FOOTAGE\\03_MOV\\00_LQ\\GOPR0006.MP4",
-			"."
+			"Dragger"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -724,7 +828,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 741.0
+		"height": 534.0
 	},
 	"replace":
 	{

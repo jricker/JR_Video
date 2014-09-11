@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 import re
 import tkFileDialog
 from JR_convert_class import Convert
@@ -132,4 +133,4 @@ class HighRes(UI, Convert):
 				output_file.write(lines)
 if __name__ == '__main__':
     Main = HighRes()
-    Main.set_variables()
+    Main.set_variables(input_data=sys.argv[1])
