@@ -1,3 +1,4 @@
+#from Tkinter import Entry, Label, Button
 import Tkinter as TK
 from functools import partial
 from JR_system_class import System
@@ -5,9 +6,12 @@ class UI(System):
     def __init__(self):
         System.__init__(self)
         self.tk = TK.Tk()
-        self.tk.iconbitmap(default= self.images + "\UI\icon.ico") 
+        self.tk.iconbitmap(default= self.TKicon) 
     def CreateButtons(self, input_data, color = '#136ec7', title = '', ):
-        self.tk = TK.Tk()
+        try:
+            self.tk
+        except AttributeError:
+            self.tk = TK.Tk()
         self.BRC = '' # reset button cash on button build call
         self.tk.title(title)
         self.tk.overrideredirect(1)
@@ -34,8 +38,10 @@ class UI(System):
         self.tk.destroy()
     def print_test(self, text):
         print text
-#if __name__ == '__main__':
-#    K = UI()
+if __name__ == '__main__':
+    K = UI()
+    #input_data = 'D:/EXAMPLE_PROJECT/Frostbite_Renders/OMAHA_TT_sc01_sh025/OMAHA_TT_sc01_sh250_v002_0000.tga' 
+    #K.RenameWindow(input_data)
 #    #names = {'422_Proxy':'Proxy', '422_LT':'Light', '422_Normal':'Normal', '422_HQ':'highquality'}
 #    K.CreateButtons(
 #        input_data={

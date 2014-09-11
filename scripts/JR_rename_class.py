@@ -7,24 +7,32 @@ class Rename():
 		#self.selection = selection + name # append the name to the end of the selection list so we can process it's properties with a -1 call in the 'i'
 	def processInput(self, input_data):
 		self.selection = [input_data]
-		extension = input_data[[i for i, letter in enumerate(input_data) if letter == '.'][-1]:]
-		try: # was having an issue passing data that didn't have an iterator value. Added this code to handle any expections. Might want to clean up later
-			iteratorValue = input_data[self.getIteratorLocation(0)[-1][0]:self.getIteratorLocation(0)[-1][1]]
+		try:
+			extension = input_data[[i for i, letter in enumerate(input_data) if letter == '.'][-1]:]
 		except IndexError:
-			iteratorValue = 0
+			extension = ''
+		without_ext = input_data[:-len(extension)]
+		try: # was having an issue passing data that didn't have an iterator value. Added this code to handle any expections. Might want to clean up later
+			iteratorValue = without_ext[self.getIteratorLocation(0)[-1][0]:self.getIteratorLocation(0)[-1][1]]
+		except IndexError:
+			iteratorValue = ''
 		filepath = input_data[:[i for i, letter in enumerate(input_data) if letter == '/' or letter == '\\'][-1]+1 ]
 		filename = input_data[[i for i, letter in enumerate(input_data) if letter == '/' or letter == '\\'][-1]+1 : -len(extension) ]
 		return extension, iteratorValue, filepath, filename
 	def processFinalName(self, input_data):
 		final_name_location = []
-		processed = self.processInput(input_data)
-		temp = processed[3].find(processed[1])
-		for i in range(temp):
-			temp-=1
-			for x in processed[3][temp]:
-				if x == '_' or x =='.' or x =='-' or x.isalpha():
-					final_name_location.append(temp)
-		final_name = processed[3][:final_name_location[0]]
+		processing = self.processInput(input_data)
+		if processing[1] != '':
+			temp = processing[3].rfind(processing[1])
+			for i in range(temp):
+				temp-=1
+				for x in processing[3][temp]:
+					if x == '_' or x =='.' or x =='-' or x.isalpha():
+						final_name_location.append(temp)
+			final_name = processing[3][:final_name_location[0]]
+		else:
+			final_name = processing[3]
+		#sleep(0.3)
 		return final_name
 	def processNamespace(self, i):
 		if self.selection[-1][0] == ':': # if the input name starts with : then we want to return the root
@@ -123,6 +131,7 @@ class Rename():
 			return self.selection[i]
 """
 if __name__ == '__main__':
+	if sys.argv[2] == 'RENAME'
 	b = ['C:\\Desktop\\test_m03-0031.jpg']
 	c = ['renamed']
 	K = Rename()

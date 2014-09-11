@@ -2,15 +2,18 @@
 from JR_project_class import Project
 from JR_system_class import System
 from JR_ui_class import UI
+from JR_rename_class import Rename
 import codecs
 import shutil
 import sys
 import os
-class Convert(System, Project, UI): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF THE CONVERSION SCRIPTS
+class Convert(System, Project, UI, Rename): # CREATE A MASTER BAT FILE WHICH HOLDS ALL OF THE CONVERSION SCRIPTS
 	def __init__(self):
 		# System is already initialized in the Projects class
-		#UI.__init__(self)
-		Project.__init__(self)
+		UI.__init__(self)
+		Rename.__init__(self)
+		System.__init__(self)
+		#Project.__init__(self)
 	def regWriter(self):
 		template_reg = self.settings + '\\registry\\default_reg.reg'
 		user_reg = self.settings + '\\registry\\custom_reg.reg'
@@ -343,7 +346,7 @@ class Convert(System, Project, UI): # CREATE A MASTER BAT FILE WHICH HOLDS ALL O
 	def exr2img(self, input_data = 'NA', format = '.tga', size = '1920 1080'):
 		batch_cmd = "EXR2IMG"
 		self.selection = input_data
-		input_data = self.rename(self.selection)
+		input_data = self.rename_auto(self.selection)
 		#input_data = input_data[0] # must do this after the rename
 		#input_data = self.rename(input_data) #renames the files in case they are incorrect
 		iteration_length =  input_data[[i for i, letter in enumerate(input_data) if letter == '_'][-1] : ]
@@ -357,28 +360,30 @@ class Convert(System, Project, UI): # CREATE A MASTER BAT FILE WHICH HOLDS ALL O
 		new_output =  new_folder + output_data[[i for i, letter in enumerate(input_data) if letter == '\\'][-1] : ]+format
 		setup = (self.scripts + "\\JR_convert.bat " + batch_cmd + ' ' + self.djv + ' ' +  '"'+output_data+iteration+'.exr'+'"' + ' ' + '"'+new_output+'"'+ ' '+ '"'+size+'"')
 		os.system(setup)
+	def folderScreenshots(self, input_data):
+		folder_name = self.processFinalName(input_data)
+		processed = self.processInput(input_data)
+		folder_path = processed[2]
+		directory = folder_path+folder_name
+		X = self.findImageSequence(input_data)
+		if not os.path.exists(directory):
+			os.makedirs(directory)
+		for i in X:
+			original = folder_path+i
+			new = directory+'/'+i
+			shutil.move(original, new)
 if __name__ == '__main__':
 	conversion = Convert()
-	#a = 'D:/EXAMPLE_PROJECT/Live_Action_Footage'
-	#a = 'MOV2H264'
-	#a = 'MOV2PRORES'
-	#b = 'D:/EXAMPLE_PROJECT/Live_Action_Footage/A003_C001_0827T1_001.R3D'
-	#if a == 'MOV2H264':
-	#	conversion.mov2H264(input_data = b)
-	#elif a == 'MOV2PRORES':
-	#	conversion.mov2prores(input_data=b)
-	#conversion.mov2prores('D:/A007C052_140704UX.MXF', 'D:/A007C052_140704UX.mov')
-	#a = 'D:/EXAMPLE_PROJECT/Frostbite_Renders/OMAHA_TT_sc01_sh011/OMAHA_TT_sc01_sh011_0000.tga'
-	#b = 'IMG2MOV'
-	#conversion.CreateButtons(input_data={'ProRes':'self.returnItem("ProRes")', 'H264':'self.returnItem("H264")'} )
-	#if conversion.BRC != '':
-	#	conversion.img2mov(a, format = conversion.BRC)
 	if sys.argv[2] == 'IMG2MOV':
 		conversion.CreateButtons(input_data={'ProRes':'self.returnItem("ProRes")', 'H264':'self.returnItem("H264")'} )
 		if conversion.BRC != '':
 			conversion.img2mov(sys.argv[1], format = conversion.BRC)
-	elif sys.argv[2] == 'RENAME':
-		conversion.rename( sys.argv[1])
+	elif sys.argv[2] == 'IMG2DIR':
+		conversion.folderScreenshots(sys.argv[1])
+	elif sys.argv[2] == 'RENAME CUSTOM':
+		conversion.RenameWindow( sys.argv[1])
+	elif sys.argv[2] == 'RENAME AUTO':
+		conversion.rename_auto( sys.argv[1])
 	elif sys.argv[2] == 'PRORES':
 		conversion.CreateButtons(
     		input_data={

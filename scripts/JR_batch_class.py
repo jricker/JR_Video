@@ -65,10 +65,10 @@ class batchConvert(Convert, UI, Rename, System):
             for dirpath,dirnames,filename in os.walk(i):
                 for file in filename:
                     #print file
-                    if 'screenshot' in file.lower():
-                        firstImage = file
-                        break
-                    elif file.endswith('.tga'):
+                    #if 'screenshot' in file.lower():
+                    #    firstImage = file
+                    #    break
+                    if file.endswith(self.image_ext):
                         firstImage = file
                         break
                 item = i+'\\'+firstImage
