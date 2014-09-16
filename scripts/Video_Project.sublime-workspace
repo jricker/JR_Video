@@ -580,8 +580,17 @@
 	},
 	"file_history":
 	[
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/regConverter_temp.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/asset_models.xgml",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/buttonTest.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/settings/registry/default_reg.reg",
+		"/C/Users/jricker/Desktop/testss.reg",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/settings/registry/custom_reg.reg",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/regConverter_temp.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_system_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_dir_builder.py",
+		"/C/Users/jricker/Desktop/JR_dir_builder_forRoland.py",
+		"/C/Python26/lib/os.py",
+		"/C/Users/jricker/Desktop/animation_0012_334.anim",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_batch_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ae_excel_reader.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_project_class.py",
@@ -589,7 +598,6 @@
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ae_generate.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_asset_builder.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert_class.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_system_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_rename_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ui_xml.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ui_class.py",
@@ -598,8 +606,6 @@
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_selection_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_rename_tool.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_batch_converter.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_dir_builder.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/settings/registry/custom_reg.reg",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert.bat",
 		"/C/Users/jricker/Documents/GitHub/JR_shotgun_test.py",
 		"/C/Users/jricker/Documents/GitHub/JR_test.py",
@@ -701,13 +707,7 @@
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_skratch.py",
 		"/C/Users/jricker/Copy/PYTHON/MAYA/2013_11_29/JR_skratch.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_substance_builder.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/test_batch.bat",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/test2.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/test_page.py",
-		"/C/Users/jricker/Copy/SCRIPTS/AE/JR_text_test_02.jsx",
-		"/C/Users/jricker/Copy/SCRIPTS/AE/crg_Text_from_File.jsx",
-		"/C/Users/jricker/Copy/SCRIPTS/AE/JR_text_test.jsx",
-		"/C/Users/jricker/Copy/SCRIPTS/AE/JR_text_test_03.jsx"
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/test_batch.bat"
 	],
 	"find":
 	{
@@ -715,9 +715,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"C:\\Users\\jricker\\Documents\\GitHub\\JR_Video\\scripts"
 		]
 	},
 	"find_state":
@@ -725,6 +726,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"again",
+			"fileDirectory",
+			"JRsystem",
+			"defaultFileLocation",
+			"JRsystem",
+			"fileLibrary",
+			"JRsystem",
+			"defaultFileLocation",
+			"JRsystem",
+			"getFileList",
+			"image_ext",
+			"self.image_ext",
 			"\\",
 			"\"\"\"",
 			"Img2Dir",
@@ -840,19 +853,7 @@
 			"IMG2MOV",
 			"img2mov",
 			"rename_class",
-			"Rename_Class",
-			"JR_convert_class",
-			"Copy\\\\GHOST\\\\CINEMATIC_SCRIPTS\\\\images\\\\UI\\\\icon.ico",
-			"findMovies",
-			"findScreenshots",
-			"findH264",
-			"mov2prores",
-			"batch_cmd",
-			"red2H264",
-			"mov2H264",
-			"red2H264",
-			"mov2H264",
-			"red2H264"
+			"Rename_Class"
 		],
 		"highlight": true,
 		"in_selection": false,

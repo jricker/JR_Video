@@ -83,6 +83,18 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\00_Mediaworks_PremierUpres\command]
 @=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,75,00,70,00,72,00,65,00,73,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\Create Folder]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="Create Folder"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\Create Folder\command]
+@=hex(2):25,00,43,00,50,00,59,00,57,00,25,00,20,00,22,00,43,00,3a,00,5c,00,55,00,73,00,65,00,72,00,73,00,5c,00,6a,00,72,00,69,00,63,00,6b,00,65,00,72,00,5c,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,5c,00,47,00,69,00,74,00,48,00,75,00,62,00,5c,00,4a,00,52,00,5f,00,56,00,69,00,64,00,65,00,6f,00,5c,00,73,00,63,00,72,00,69,00,70,00,74,00,73,00,5c,00,4a,00,52,00,5f,00,63,00,6f,00,6e,00,76,00,65,00,72,00,74,00,5f,00,63,00,6c,00,61,00,73,00,73,00,2e,00,70,00,79,00,22,00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,49,00,4d,00,47,00,32,00,44,00,49,00,52,00,22,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\Rename]
+"Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
+"MUIVerb"="EA_Rename"
+"SubCommands"="00_Mediaworks_RenameAuto;00_Mediaworks_RenameUI"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.png\Shell\EA_Mediaworks]
 "Icon"="C:\\Users\\jricker\\Copy\\ASSETS\\LOGOS\\EA\\EA_ICON.ico"
 "SubCommands"="00_Mediaworks_Rename; 00_Mediaworks_Img2Mov;00_Mediaworks_Img2Dir;"

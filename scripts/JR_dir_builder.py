@@ -22,11 +22,11 @@ directoryList = []
 userName = os.path.expanduser("~")
 mainDirectory = userName + '\\Desktop'
 masterXML = 'project.xgml'
-projectName = 'FRANK'
+projectName = 'KFR'
 produceLOD = 0
 produceSC = 1
-sceneAmount = 5
-shotAmount = 20
+sceneAmount = 1
+shotAmount = 1
 ############################
 tree = ET.parse(masterXML)
 root = tree.getroot()
