@@ -37,12 +37,13 @@ class ProcessExcelDoc(System):
 			regionCellValue = 12
 		return regionCellValue
 	########################################################################################################
-	def readExcel(self, region, excelDoc, worksheet_name):
+	def readExcel(self, region, excelDoc, worksheet_number):
 		regionalValue = self.processRegions(region)
 		regionData = {'ID':'', 'Comp':[],'Original':[], 'Text':[]}
 		workbook = xlrd.open_workbook(excelDoc)
 		#worksheet = workbook.sheet_by_name('Text')
-		worksheet = workbook.sheet_by_name(worksheet_name)
+		#worksheet = workbook.sheet_by_name(worksheet_name)
+		worksheet = workbook.sheet_by_index(worksheet_number)
 		num_rows = worksheet.nrows - 1
 		num_cells = worksheet.ncols - 1
 		curr_row = -1
@@ -117,11 +118,11 @@ if __name__ == '__main__':
 	#excel = 'C:/Users/jricker/Desktop/original_text.xls'
 	listToProcess = theList[1:]
 	if listToProcess[0] == 'Replace With':
-		worksheet_name = 'Replace'
+		worksheet_number = 1
 	else:
-		worksheet_name = 'Text'
+		worksheet_number = 0
 	for i in listToProcess:
-		Kk.readExcel(str(i), excel, worksheet_name)
+		Kk.readExcel(str(i), excel, worksheet_number)
 ##################################
 ### DOUBLE CHECK THE ORIGINAL DATA FIRST TO SEE IF ANYTHING HAS CHANGED IN THE EXCEL DOCUMENT, IF IT HAS CHANGE IT IN THE AE PROJECT
 ##################################

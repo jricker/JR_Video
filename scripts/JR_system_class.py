@@ -27,7 +27,7 @@ class System(Rename):
         self.scripts = self.userName +"\\Documents\\GitHub\\JR_Video\\scripts"
         self.settings = self.userName +"\\Documents\\GitHub\\JR_Video\\settings"
         self.sequences = self.systemLocation + "test\\sequences"
-        self.TKicon = self.images + "\UI\EA_ICON.ico"
+        self.TKicon = self.userName +"\\Documents\\GitHub\\JR_Video\\icons\\icon.ico"
         # CACHE ITEMS
         self.BRC = ''
         ## SETTINGS

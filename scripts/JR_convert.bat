@@ -19,7 +19,7 @@ goto END
 goto END
 ::
 :H264
-"%~2" -i %3 -y -vcodec libx264 -b:v 5000k -codec:a libvo_aacenc "%~4"
+"%~2" -i %3 -y -vcodec libx264 -b:v 2000k -codec:a libvo_aacenc "%~4"
 goto END
 ::
 :REDH264
@@ -45,7 +45,7 @@ if %~8 == ProRes goto convertProRes
 goto END
 ::
 :convertH264
-%5 -i "%~6.avi" -y -vcodec libx264 -b:v 5000k -s %7 -codec:a libvo_aacenc %6.mp4
+%5 -i "%~6.avi" -y -vcodec libx264 -b:v 2000k -s %7 -codec:a libvo_aacenc %6.mp4
 ::del "%~6.avi"
 goto END
 ::
