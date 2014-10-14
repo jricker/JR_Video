@@ -17,7 +17,7 @@ class System(Rename):
         self.djv = '"C:\\Program Files (x86)\\djv 0.8.3\\bin\\djv_convert"'
         self.ffmpeg = self.systemLocation + "programs\\FFMPEG\\ffmpeg"
         self.ffprobe = self.systemLocation + "programs\\FFMPEG\\ffprobe"
-        self.redline = '"C:\\Program Files\\REDCINE-X PRO 64-bit\\redline"'
+        self.redline = '"C:\\Program Files\\REDCINE-X PRO 64-bit\\REDline"'
         self.vdub = self.systemLocation + "programs\\vDub\\vdub64.exe"
         self.mencoder = self.systemLocation + "programs\\MPlayer\\mencoder"
         ## FOLDER LOCATIONS

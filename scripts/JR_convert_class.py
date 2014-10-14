@@ -144,6 +144,9 @@ class Convert(System, Project, UI, Rename): # CREATE A MASTER BAT FILE WHICH HOL
 				resizeWxH = '"'+ str(int(metadata['Width'])/2)+' '+str(int(metadata['Height'])/2) + '"'
 			if 4096 < metadata['Width']:
 				resizeWxH = '"'+ str(int(metadata['Width'])/2)+' '+str(int(metadata['Height'])/2) + '"'
+		else:
+			WxH = size
+			resizeWxH = '"'+'1920 1080'+'"'
 		##############################################################################################################################################
 		#QT_final_name = self.processFinalName(input_data)+output_ext #for renaming the QT without the iterations or seperators
 		processed = self.processInput(input_data) #grab the name ouputs from the rename class
@@ -374,6 +377,7 @@ class Convert(System, Project, UI, Rename): # CREATE A MASTER BAT FILE WHICH HOL
 			shutil.move(original, new)
 if __name__ == '__main__':
 	conversion = Convert()
+	#conversion.img2mov(input_data= 'C:/Users/James/Desktop/test/A003_C018_1004UY.RDC/TIFF_temp/shot_01_test_0000.tif', format = 'ProRes')
 	if sys.argv[2] == 'IMG2MOV':
 		conversion.CreateButtons(input_data={'ProRes':'self.returnItem("ProRes")', 'H264':'self.returnItem("H264")'} )
 		if conversion.BRC != '':

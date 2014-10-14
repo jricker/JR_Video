@@ -93,8 +93,9 @@ class batchConvert(Convert, UI, Rename, System):
 ####
 if __name__ == '__main__':
     batch = batchConvert()
+    #print os.getcwd()
     ############################
-    #a = 'D:/EXAMPLE_PROJECT/Live_Action_Footage'
+    #a = 'C:/Users/James/Desktop/test/A003_C018_1004UY.RDC'
     #batch.batch_convert2H264(a)
     if sys.argv[2] == 'SS2MOV':
         batch.CreateButtons(input_data={'ProRes':'self.returnItem("ProRes")', 'H264':'self.returnItem("H264")'} )
