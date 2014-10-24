@@ -48,14 +48,21 @@ class batchConvert(Convert, UI, Rename, System):
         movies = self.findMovies(directory)
     	for i in movies:
             processed = self.processInput(i)
-            H264version = processed[1]+'_H264.mp4'# i[:-4]+'_H264.mp4'
-            if os.path.exists(H264version):
-    			pass
+            H264version = i[:len(processed[0])*-1]+'_H264.mp4'
+            H264versionOnParent = parent_directory+'/'+processed[3]+'_H264.mp4'
+            if os.path.exists(H264version) or os.path.exists(H264versionOnParent):
+    			print 'passing on', i
             else:
-                self.mov2H264(i)
-            original = directory+'/'+processed[3]+'_H264.mp4'
-            move_to =  parent_directory+'/'+processed[3]+'_H264.mp4'
-            shutil.move(original, move_to)
+                if i.endswith('_H264.mp4'):
+                    print 'passing on', i
+                else:
+                    print 'converting this -->',i
+                    self.mov2H264(i)
+                    # After conversion, move the files to the parent for easy access.
+                    original = processed[2]+'/'+processed[3]+'_H264.mp4'
+                    move_to =  parent_directory+'/'+processed[3]+'_H264.mp4'
+                    print ' moving this ... ', original, ' TO THIS -->', move_to
+                    shutil.move(original, move_to)
     def batch_SS2MOV(self, directory):
         output_format = self.BRC
         parent_directory = directory[:[i for i, letter in enumerate(directory) if letter == '/' or letter == '\\'][-1]]
@@ -93,8 +100,6 @@ class batchConvert(Convert, UI, Rename, System):
 ####
 if __name__ == '__main__':
     batch = batchConvert()
-    #print os.getcwd()
-    ############################
     #a = 'C:/Users/James/Desktop/test/A003_C018_1004UY.RDC'
     #batch.batch_convert2H264(a)
     if sys.argv[2] == 'SS2MOV':

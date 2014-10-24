@@ -22,10 +22,7 @@ class Convert(System, Project, UI, Rename): # CREATE A MASTER BAT FILE WHICH HOL
 		#print user_reg_lines
 		new_list = []
 		for i in user_reg_lines:
-			#print i.strip()
-			#x = i.strip()
 			x = i.strip()
-			#print x
 			if 'USERNAME' in x:
 				new_line = x.replace('USERNAME', self.userName[9:])
 			else:
@@ -105,10 +102,6 @@ class Convert(System, Project, UI, Rename): # CREATE A MASTER BAT FILE WHICH HOL
 		os.remove(output_metadata)
 		return metadata
 	def img2mov(self, input_data = 'NA', metadata = 'NA', format = 'ProRes', size = '1920x1080', compression = 'ProRes422_HQ'):
-		#if format == 'ProRes':
-		#	output_ext = '.mov'
-		#elif format == 'H264':
-		#	output_ext = '.mp4'
 		##############################################################################################################################################
 		compression_01 = self.compression[1] # use the original compression file which is 01 for it's data
 		compression_02 = self.compression[1][:-6]+'02.vcf' # then write out to compression file 02 each line but with the updated FPS
@@ -377,7 +370,6 @@ class Convert(System, Project, UI, Rename): # CREATE A MASTER BAT FILE WHICH HOL
 			shutil.move(original, new)
 if __name__ == '__main__':
 	conversion = Convert()
-	#conversion.img2mov(input_data= 'C:/Users/James/Desktop/test/A003_C018_1004UY.RDC/TIFF_temp/shot_01_test_0000.tif', format = 'ProRes')
 	if sys.argv[2] == 'IMG2MOV':
 		conversion.CreateButtons(input_data={'ProRes':'self.returnItem("ProRes")', 'H264':'self.returnItem("H264")'} )
 		if conversion.BRC != '':

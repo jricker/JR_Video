@@ -4,6 +4,106 @@
 		"selected_items":
 		[
 			[
+				"eleme",
+				"element_id	(local, instance)"
+			],
+			[
+				"che",
+				"JR_action_check"
+			],
+			[
+				"elem",
+				"element_id	(global, instance)"
+			],
+			[
+				"entit",
+				"entity	(global, instance)"
+			],
+			[
+				"user",
+				"user_list	(attribute, instance)"
+			],
+			[
+				"project",
+				"project_id	(local, instance)"
+			],
+			[
+				"pr",
+				"project	(local, instance)"
+			],
+			[
+				"proces",
+				"process_dates(start_date, end_date)	(global, function)"
+			],
+			[
+				"start",
+				"start_time"
+			],
+			[
+				"entity",
+				"entity_id"
+			],
+			[
+				"return",
+				"return_booking(ID)	(global, function)"
+			],
+			[
+				"last",
+				"last_break_point"
+			],
+			[
+				"user_",
+				"user_id	(local, instance)"
+			],
+			[
+				"get_booking",
+				"get_bookings(user_id, project_id, start_date, end_date)	(global, function)"
+			],
+			[
+				"next",
+				"next_day"
+			],
+			[
+				"task",
+				"task_start_date	(global, instance)"
+			],
+			[
+				"TAS",
+				"TASK"
+			],
+			[
+				"update",
+				"update_element(element_type, nameorID, field, value)	(global, function)"
+			],
+			[
+				"tasks",
+				"tasks"
+			],
+			[
+				"eve",
+				"event"
+			],
+			[
+				"new",
+				"new_tag_list	(global, instance)"
+			],
+			[
+				"event",
+				"event_type"
+			],
+			[
+				"element",
+				"element_type	(local, instance)"
+			],
+			[
+				"create",
+				"create_element(element_type, nameorID, field, value)	(global, function)"
+			],
+			[
+				"format",
+				"formatdate	(imported, instance)"
+			],
+			[
 				"Inde",
 				"IndexError	(builtin, class)"
 			],
@@ -46,10 +146,6 @@
 			[
 				"process",
 				"processing	(local, instance)"
-			],
-			[
-				"proces",
-				"processRename(old, new)	(attribute, function)"
 			],
 			[
 				"el",
@@ -124,10 +220,6 @@
 				"parent_dir	(local, instance)"
 			],
 			[
-				"new",
-				"new_name	(local, instance)"
-			],
-			[
 				"proc",
 				"processInput(input_data)	(attribute, function)"
 			],
@@ -152,10 +244,6 @@
 				"rename_auto(input_data)	(attribute, function)"
 			],
 			[
-				"pr",
-				"processInput(input_data)	(attribute, function)"
-			],
-			[
 				"move",
 				"move_to	(local, instance)"
 			],
@@ -166,10 +254,6 @@
 			[
 				"paren",
 				"parent_name	(local, instance)"
-			],
-			[
-				"create",
-				"created_movie	(local, instance)"
 			],
 			[
 				"movie",
@@ -430,90 +514,6 @@
 			[
 				"sel",
 				"selItems"
-			],
-			[
-				"regs",
-				"regionsToConvert"
-			],
-			[
-				"ger",
-				"ger"
-			],
-			[
-				"va",
-				"value"
-			],
-			[
-				"ass",
-				"assignRandomMaterial(materialType, item, materialName, red, green, blue)	(attribute, function)"
-			],
-			[
-				"shader",
-				"shaderExists	(local, instance)"
-			],
-			[
-				"matera",
-				"materialName	(local, instance)"
-			],
-			[
-				"material",
-				"materialName	(local, instance)"
-			],
-			[
-				"assign",
-				"assignTestMaterial(materialType, item, materialName)	(attribute, function)"
-			],
-			[
-				"force",
-				"forceElement"
-			],
-			[
-				"camera",
-				"camera"
-			],
-			[
-				"d",
-				"def	Function"
-			],
-			[
-				"Gen",
-				"GENERIC"
-			],
-			[
-				"PS3",
-				"PS3"
-			],
-			[
-				"sg",
-				"sg_status_list"
-			],
-			[
-				"summar",
-				"summarize"
-			],
-			[
-				"summ",
-				"summaries"
-			],
-			[
-				"mov",
-				"movList"
-			],
-			[
-				"dir",
-				"dirpath"
-			],
-			[
-				"attr",
-				"attributeList"
-			],
-			[
-				"history",
-				"historyList"
-			],
-			[
-				"atr",
-				"attributeList"
 			]
 		]
 	},
@@ -580,6 +580,51 @@
 	},
 	"file_history":
 	[
+		"/C/Users/jricker/Copy/SHOTGUN/JR_test_05.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/JR_scheduling.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/JR_tag_check.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/JR_element_check.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/JR_action_check.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_tool_class.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_hk_cmds.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/element_check.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/scheduling_class.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/scheduling_backup.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/forms.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/check_change.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/scheduling.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/JR_statusFlipTasks.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/print",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/foreground.bat",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/shotgunEventDaemon.conf",
+		"/C/Users/jricker/Copy/SHOTGUN/how a booking is made in shotgun",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/examplePlugins/sharedStateA.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/logArgs.py",
+		"/C/Users/jricker/Copy/SHOTGUN/JR_test_04.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/plugins/print_info.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/examplePlugins/statusFlipDownstreamTasks.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_deploy.bat",
+		"/C/Users/jricker/Copy/SHOTGUN/src/examplePlugins/JR_statusFlipTasks.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/shotgunEventDaemon.conf.example",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/examplePlugins/logArgs.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/examplePlugins/sharedStateC.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/examplePlugins/calculateCutDuration.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/examplePlugins/sharedStateB.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/shotgunEventDaemon.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/README.mkd",
+		"/C/Users/jricker/Documents/GitHub/gaffer/README.asciidoc",
+		"/C/Users/jricker/Documents/GitHub/gaffer/doc/INSTALL.py",
+		"/C/Users/jricker/Copy/SHOTGUN/JR_shotgun_test.py",
+		"/C/Users/jricker/Copy/SHOTGUN/JR_test.py",
+		"/C/Users/jricker/Copy/SHOTGUN/JR_test_03.py",
+		"/C/Users/jricker/Documents/GitHub/python-api/shotgun_api3/shotgun.py",
+		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert_class.py",
+		"/C/Users/jricker/Documents/GitHub/shotgunEvents/src/testings.py",
+		"/C/Python26/Lib/site-packages/pywin32.pth",
+		"/C/Users/jricker/Documents/GitHub/gaffer/bin/gaffer.py",
+		"/C/Users/jricker/Documents/GitHub/JR_shotgun_test.py",
+		"/D/projects/genesis-dl-prod/.p4config",
+		"/C/Users/jricker/Desktop/JR_dir_builder_forRoland.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/asset_models.xgml",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/buttonTest.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/settings/registry/default_reg.reg",
@@ -588,7 +633,6 @@
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/regConverter_temp.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_system_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_dir_builder.py",
-		"/C/Users/jricker/Desktop/JR_dir_builder_forRoland.py",
 		"/C/Python26/lib/os.py",
 		"/C/Users/jricker/Desktop/animation_0012_334.anim",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_batch_class.py",
@@ -597,7 +641,6 @@
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_upres_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ae_generate.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_asset_builder.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_rename_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ui_xml.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_ui_class.py",
@@ -607,7 +650,6 @@
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_rename_tool.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_batch_converter.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_convert.bat",
-		"/C/Users/jricker/Documents/GitHub/JR_shotgun_test.py",
 		"/C/Users/jricker/Documents/GitHub/JR_test.py",
 		"/C/Users/jricker/Desktop/EXAMPLE/Edit/JAPAN_EDIT.prproj",
 		"/C/Users/jricker/Desktop/EXAMPLE/Edit/GOTY_EDIT.prproj",
@@ -641,8 +683,6 @@
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_dragger_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/userSetup.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_hk_map.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_hk_cmds.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_tool_class.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_rename_tool_backup.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_custom_window.py",
 		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_camera_shake.py",
@@ -661,53 +701,13 @@
 		"/C/Users/jricker/Copy/PYTHON/MAYA/2013_11_29/_UI_sceneOpen.py",
 		"/C/Users/jricker/Copy/PYTHON/XML/xml_parse_test_01.py",
 		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/scripts/test_page.py",
-		"/C/Users/jricker/Documents/GitHub/python-api/shotgun_api3/shotgun.py",
 		"/C/Users/jricker/Documents/GitHub/python-api/tests/__init__.py",
 		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/libraries/zip/python_excel/xlwt-0.7.5/setup.py",
 		"/C/Users/jricker/Copy/GHOST/CINEMATIC_SCRIPTS/libraries/zip/python_excel/xlwt-0.7.5/PKG-INFO",
 		"/C/Users/jricker/Copy/PYTHON/MAYA/2013_11_29/shotgun_api3.py",
 		"/C/Users/jricker/Copy/PYTHON/MAYA/2013_11_29/userScripts.mel",
 		"/C/Users/jricker/Copy/PYTHON/MAYA/2013_11_29/userSetup.py",
-		"/C/Users/jricker/Desktop/JAPAN_EDIT_HIGHRES.edl",
-		"/C/Users/jricker/Desktop/JAPAN_EDIT_HIGHRES3.edl",
-		"/D/JAPAN/03_EDITS/02_PREMIER_PROJECT/JAPAN_EDIT_HIGHRES.prproj",
-		"/D/Resolve Projects/Users/James Ricker/Projects/edit_test/Sessions/Timeline_01/0b317911-b67e-45f6-afb7-261d47339a84.xml",
-		"/D/Resolve Projects/Users/James Ricker/Projects/JAPAN_FINAL_CC/Sessions/JAPAN_EDIT/cbcbee6d-bc9a-4335-8b23-9e96f42d7d57.xml",
-		"/D/Resolve Projects/Users/James Ricker/Projects/JAPAN_FINAL_CC/Media Refs/MpVideoClip/1eaeecf7-fc84-4a42-afa1-4df1d6fa2a9c.xml",
-		"/D/JAPAN/03_EDITS/02_PREMIER_PROJECT/JAPAN_EDIT_BKP.prproj",
-		"/D/JAPAN/03_EDITS/JAPAN_EDL.edl",
-		"/D/JAPAN/03_EDITS/JAPAN_EDL2.edl",
-		"/D/Resolve Projects/Settings/MediaMetadataPresetList.xml",
-		"/D/Resolve Projects/Settings/KeyboardPresetList.xml",
-		"/D/Resolve Projects/Settings/DeliverPresetList.xml",
-		"/D/Resolve Projects/Settings/WindowsPresetList.xml",
-		"/D/Resolve Projects/Settings/PTZRInputPresetList.xml",
-		"/D/Resolve Projects/Settings/PTZROutputPresetList.xml",
-		"/D/Resolve Projects/Settings/SlatePresetList.xml",
-		"/D/Resolve Projects/Users/Ricker/Configs/User Default Config.xml",
-		"/D/Resolve Projects/Users/admin/User.xml",
-		"/D/Resolve Projects/Users/Ricker/User.xml",
-		"/D/Resolve Projects/Users/Ricker/User.xml.resolve.old",
-		"/D/Resolve Projects/Settings/SYSTEM CONFIG.xml",
-		"/C/Users/jricker/Desktop/XBOX/XBOX Controller.py",
-		"/D/projects/genesis-dl-prod/Data/Source/FBScripts/startup.dbx",
-		"/C/Users/jricker/Desktop/data2.txt",
-		"/C/Users/jricker/Desktop/data.txt",
-		"/C/Users/jricker/Documents/Mediaworks/JR_system_class.py",
-		"/C/Users/jricker/Documents/Mediaworks/JR_rename_class.py",
-		"/C/Users/jricker/Documents/Mediaworks/JR_ae_generate.py",
-		"/C/Users/jricker/Desktop/JR_ae_localization.jsx",
-		"/C/Users/jricker/Desktop/JR_ae_excel_reader.py",
-		"/C/Users/jricker/Desktop/JR_ae_generate.py",
-		"/C/Users/jricker/Desktop/JR_AE_Replace.bat",
-		"/C/Users/jricker/Desktop/JR_AE_Generate.bat",
-		"/C/Users/jricker/Desktop/JR_rename_class.py",
-		"/C/Users/jricker/Desktop/JR_system_class.py",
-		"/C/Users/jricker/Dropbox/python/2013_04_26/tool_toDOs.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Maya/JR_skratch.py",
-		"/C/Users/jricker/Copy/PYTHON/MAYA/2013_11_29/JR_skratch.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/JR_substance_builder.py",
-		"/C/Users/jricker/Documents/GitHub/JR_Video/scripts/test_batch.bat"
+		"/C/Users/jricker/Desktop/JAPAN_EDIT_HIGHRES.edl"
 	],
 	"find":
 	{
@@ -715,7 +715,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"C:\\Users\\jricker\\Documents\\GitHub\\JR_Video\\scripts"
@@ -726,134 +726,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"asset",
+			".",
+			"element_id",
+			"check_change",
+			"get_all_tasks",
+			"remove_booking",
+			"td",
+			"find_dates",
+			"find_hole",
+			"count_days",
+			",self",
+			"dates",
+			"find_hole",
+			"get_all_tasks",
+			"self.user_list",
+			"self",
+			",self",
+			"users",
+			"create_booking",
+			"remove_booking",
+			"return_booking",
+			"count_days",
+			"holed_days",
+			"get_all_tasks",
+			"process_dates",
+			"clean_dates",
+			"def",
+			"overlap_bookings",
+			"proj_bookings",
+			"get_bookings",
+			"count_days",
+			"get_all_tasks",
+			"find_hole",
+			"create_final",
+			"end",
+			"-delta",
+			"end_date",
+			"-delta",
+			"duration",
+			"meta",
+			"createBooking",
+			"james",
+			"James",
+			"print",
+			"ID",
+			"process_dates",
+			"date",
+			"DATE",
+			"date",
+			"find_hole",
+			"get_bookings",
+			"overlap_bookings",
+			"return_booking",
+			"find_element",
+			"sg.update",
+			"current_bookings",
+			":\n",
+			"find_last_day",
+			"count_days",
+			"create_final",
+			"count_days",
+			"process_dates",
+			"get_bookings",
+			"test",
+			"create_final",
+			"(i",
+			"X",
+			"start_date",
+			"CREATE",
+			"create",
+			"CREATE",
+			"create",
+			", ",
+			"update_element",
+			"callback",
+			"shot",
+			"element",
+			", ",
+			"Shot",
+			", ",
+			"shot_name",
+			"sg_sequence",
+			"ence",
+			"shot",
+			"Sequ",
+			"sequence",
+			"sequences",
+			"Asset",
+			"asset",
+			"Shotgun_Asset_Change",
+			", ",
+			"sg.find",
+			"find",
+			"update",
+			"delete",
+			"remove",
+			"tag_list",
+			", ",
+			",",
+			", ",
+			",",
+			"INFO",
+			"field",
+			"Field",
+			" sg.create",
+			"create",
+			"CREATE",
+			"id",
+			"update",
+			"3d73de9b871b18dba8b02a419be7a2e6190523fc99a9a732280974f606e6d53c",
+			"},",
+			",",
+			"james",
+			"James",
+			"utils",
+			"email",
+			"utils",
+			"Utils",
+			"import",
+			"exit",
+			"sys.exit",
+			"entity_type",
+			"filter",
+			"japan",
 			"again",
 			"fileDirectory",
 			"JRsystem",
-			"defaultFileLocation",
-			"JRsystem",
-			"fileLibrary",
-			"JRsystem",
-			"defaultFileLocation",
-			"JRsystem",
-			"getFileList",
-			"image_ext",
-			"self.image_ext",
-			"\\",
-			"\"\"\"",
-			"Img2Dir",
-			"test",
-			"original_name2",
-			"file_path2",
-			"\\",
-			"custom_list",
-			"with_field",
-			"replace_field",
-			"name_field",
-			"renameBtn",
-			"RenameWindow",
-			"rename_custom",
-			"self.with_field",
-			"self.replace_field",
-			"self.name_field",
-			"buildBtn",
-			"processInput",
-			"Project",
-			"project",
-			"shot_field",
-			"scene_field",
-			"project_field",
-			"processed",
-			"input_data",
-			"\\",
-			"rename",
-			"ids",
-			"selection",
-			"extensio",
-			"placement",
-			"name",
-			"file_name2",
-			"file_path",
-			"input_data[0]",
-			"\\",
-			" = ",
-			"= ",
-			"rename",
-			"RENAME",
-			"rename",
-			"askdirectory",
-			"\\",
-			"\\\\",
-			"\\",
-			"output_ext",
-			"/2",
-			"input_data",
-			"processed",
-			"resizeWxH",
-			"mov2prores",
-			"\\",
-			"movie_extensions",
-			"movList",
-			"\\",
-			"resizeWxH",
-			"output_codec",
-			"output_format",
-			"format]",
-			"output_format",
-			")/",
-			"mov2prores",
-			"red2H264",
-			"theend",
-			"djv",
-			"self",
-			"exr2img",
-			"EXR2IMG",
-			"exr2img",
-			"djv",
-			"#!!",
-			"iteration",
-			"output_data",
-			"\\",
-			"processFinalName",
-			"shutil",
-			"getFileList",
-			"\\",
-			"endswith",
-			"getIteratorLocation",
-			"H264",
-			"mov2H264",
-			"\"SubCommands\"",
-			"mov2H264",
-			"text2regHex",
-			"regHex2text",
-			"USERNAME",
-			"\"Icon\"",
-			"\\",
-			"user_reg_data",
-			"regWriter",
-			"\\\\",
-			"regWriter",
-			"\\Copy\\GHOST\\CINEMATIC_SCRIPTS\\scripts",
-			"00_Mediaworks_BatchConvert_SS2MOV",
-			"conversion",
-			"Copy\\GHOST\\CINEMATIC_SCRIPTS\\scripts",
-			"finalSet",
-			"BRC",
-			"format",
-			"test2",
-			"self.BRC",
-			"/",
-			"test2",
-			"\\",
-			"self.BRC",
-			"input_data",
-			"CreateButtons",
-			"img2mov",
-			"IMG2MOV",
-			"img2mov",
-			"IMG2MOV",
-			"img2mov",
-			"rename_class",
-			"Rename_Class"
+			"defaultFileLocation"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -909,7 +909,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 473.0
+		"height": 521.0
 	},
 	"replace":
 	{
@@ -971,7 +971,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 249.0,
+	"side_bar_visible": false,
+	"side_bar_width": 275.0,
 	"status_bar_visible": true
 }
