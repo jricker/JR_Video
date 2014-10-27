@@ -3,6 +3,7 @@ class Rename():
 	def __init__(self):#, selection, name):
 		self.name = ''
 		self.selection = ''
+		self.file_list = []
 		#self.name = name
 		#self.selection = selection + name # append the name to the end of the selection list so we can process it's properties with a -1 call in the 'i'
 	def processInput(self, input_data):

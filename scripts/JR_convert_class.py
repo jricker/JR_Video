@@ -377,7 +377,25 @@ if __name__ == '__main__':
 	elif sys.argv[2] == 'IMG2DIR':
 		conversion.folderScreenshots(sys.argv[1])
 	elif sys.argv[2] == 'RENAME CUSTOM':
-		conversion.RenameWindow( sys.argv[1])
+		#print 'hello'
+		#try:
+		#	a = conversion.name.winfo_exists()
+		#except:
+		#	print ' didnt work'
+		#print 'nope'
+		#conversion.tk.destroy()
+		conversion.RenameWindow(sys.argv[1])
+		#conversion.file_list.append(sys.argv[1])
+		#if conversion.windowOpen == 1:
+		#	conversion.CreateButtons(input_data = {str(conversion.file_list):'hi'})
+		#else:
+		#	conversion.CreateButtons(input_data = {'went wrong':''})
+		#a = conversion.name.winfo_exists()
+		#if a == True:
+		#	conversion.CreateButtons(input_data={str(conversion.file_list):'test'})
+    	#else:
+    	#	conversion.file_list.append(sys.argv[1])
+    	#	conversion.CreateButtons(input_data={str(conversion.file_list):'test'})
 	elif sys.argv[2] == 'RENAME AUTO':
 		conversion.rename_auto( sys.argv[1])
 	elif sys.argv[2] == 'PRORES':

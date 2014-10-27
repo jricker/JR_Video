@@ -30,6 +30,7 @@ class System(Rename):
         self.TKicon = self.userName +"\\Documents\\GitHub\\JR_Video\\icons\\icon.ico"
         # CACHE ITEMS
         self.BRC = ''
+        self.windowOpen = 1
         ## SETTINGS
         self.movie_ext = ('.mov', '.R3D', '.MXF', '.mp4', '.MP4' , '.avi')
         self.image_ext = ('.jpg','.tiff','.png', '.tga', '.exr')
@@ -130,7 +131,7 @@ class System(Rename):
             self.tk
         except AttributeError:
             self.tk = TK.Tk()
-            self.tk.iconbitmap(default= self.TKicon) 
+            self.tk.iconbitmap(default= self.TKicon)
         self.tk.geometry('200x120')
         #TITLE
         self.tk.title('Rename')
@@ -150,6 +151,7 @@ class System(Rename):
         scene = Label(text = 'Replace :', bg = bgColour, fg = 'white').place(x=8, y=5+labelOffset)
         shots = Label(text = 'With :', bg = bgColour, fg = 'white').place(x=8, y=30+labelOffset)
         ## INPUT FIELDS
+        #
         self.name_field = Entry(bg = input_bgColour, fg=input_fgColour, bd = 0)
         self.replace_field = Entry(bg = input_bgColour, fg=input_fgColour, bd = 0)
         self.with_field = Entry(bg = input_bgColour, fg=input_fgColour, bd = 0)
@@ -169,8 +171,12 @@ class System(Rename):
         self.tk.configure(background= bgColour)
         self.tk.bind('<Escape>', quit) # BIND TO ESC KEY
         self.tk.bind('<Return>', partial(self.rename_custom, input_data ))
-        #self.tk.bind("<FocusOut>", self.killWindow)
+        #self.tk.bind("<FocusOut>", self.killWindow) 
         self.tk.mainloop()
+        if Name.winfo_exists() == True:
+            self.windowOpen = 1
+        else: 
+            self.windowOpen = 0
     def rename_custom(self, input_data, *args):
         #print input_data
         self.custom_list = [self.name_field.get(), self.replace_field.get(), self.with_field.get()]
